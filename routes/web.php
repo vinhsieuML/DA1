@@ -16,14 +16,38 @@ use Illuminate\Support\Facades\DB;
 
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/productDetail/{id}', function ($id) {
-        $product = App\product::find($id);
-        
-        echo $product->name;
-    });
-    
-    Route::get('/', 'homepageController@LoadData');
+    Route::get('/', 'homepageController@LoadData')->name('homePage');
 
     Route::get('/images/{type}/{name}','imageServe@image');
+
+    Route::get('/productDetail/{proId}','productDetailController@getInfoById');
+    
+    Route::post('/productDetail/{proId}','productDetailController@add_cart');
+
+    //Dang Nhap-Dang Xuat
+    Route::get('/login','loginController@login');
+    Route::post('/login','loginController@handleForm');
+    Route::get('/logout','loginController@logout');
+
+    // Quan ly tai khoan
+    Route::group(['prefix' => 'user'], function () {
+        //Orders
+        Route::get('orders', 'userController@orders')->name('userHome');
+
+        Route::get('orderInfo/{billId}', 'userController@orderDetail');
+        Route::get('confirmOrder/{billId}','userController@confirmOrder');
+
+        //Account
+        Route::get('accountInfo','userController@accountInfo')->name('userInfo');
+        Route::post('updateInfo','userController@editAccInfo');
+
+        Route::get('changePass','userController@changePass');
+        Route::post('changePass','userController@changePassHandler');
+
+        //Cart
+        Route::get('cart','cartController@viewCart');
+        Route::post('cart/change','cartController@updateCart');
+        Route::post('cart/pay','cartController@pay');
+    });
 });
 

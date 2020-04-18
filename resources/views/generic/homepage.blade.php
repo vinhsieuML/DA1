@@ -193,7 +193,7 @@
             
                 <div class='product eff'>
                 
-                    <a href='details.php?pro_id=$pro_id'>
+                    <a href='productDetail/<?php echo $pro_id ?>'>
                     
                         <img class='img-responsive' src='images/product_images/<?php echo $pro_link ?>'>
                     
@@ -205,7 +205,7 @@
                     
                         <h3 class='pad_h'>
                 
-                            <a href='details.php?pro_id=$pro_id'>
+                            <a href='productDetail/<?php echo $pro_id ?>'>
                                 <?php echo $pro_title ?>
 
                             </a>
@@ -225,7 +225,7 @@
 
                             </a>
                         
-                            <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                            <a class='btn btn-primary' href='productDetail/<?php echo $pro_id ?>'>
 
                                 <i class='fa fa-shopping-cart'></i> Thêm vào giỏ hàng
 

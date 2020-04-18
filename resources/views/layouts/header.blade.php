@@ -1,5 +1,6 @@
 <body> 
-   
+    <script src="{{asset('js/jquery-331.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap-337.min.js')}}"></script>
    <div id="top"><!-- Top Begin -->
        
        <div class="container"><!-- container Begin -->
@@ -16,7 +17,7 @@
                        
                    }else{
                        
-                      echo "Xin chào: " + session()->get('customer_email');
+                      echo "Xin chào: " . session()->get('customer_email');
                        
                    }
                    
@@ -31,7 +32,7 @@
                
                <ul class="menu"><!-- cmenu Begin -->
                    <li>
-                       <a href="customer/my_account.php?my_orders">Tài khoản của tôi</a>
+                   <a href="{{url('user/orders')}}">Tài khoản của tôi</a>
                    </li>
                    <!-- <li>
                        <a href="cart.php">Go To Cart</a>
@@ -42,18 +43,18 @@
                            <?php 
                            
                            if(!session()->has('customer_email')){
-                       
-                                echo "<a href='checkout.php'> Đăng Nhập </a>";
-                                echo "<li>
+                    
+                            ?>
+                                <a href='{{url('/login')}}'> Đăng Nhập </a>;
+                                <li>
                                     <a href='customer_register.php'>Đăng Kí</a>
                                       </li>";
-                               }else{
 
-                                echo " <a href='logout.php'> Đăng xuất </a> ";
+                            <?php }else{ ?>
 
-                               }
-                           
-                           ?>
+                                <a href='{{url('logout')}}'> Đăng xuất </a>
+
+                             <?php  }?>
                            
                        </a>
                    </li>
@@ -72,10 +73,10 @@
            
            <div class="navbar-header"><!-- navbar-header Begin -->
                
-               <a href="index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
+           <a href="{{url('/')}}" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="images/logo/logo2.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/logo/logo-res.png" alt="M-dev-Store Logo" class="visible-xs">
+               <img src="{{url('images/logo/logo2.png')}}" alt="M-dev-Store Logo" class="hidden-xs">
+               <img src="{{url('images/logo/logo-res.png')}}" alt="M-dev-Store Logo" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                
@@ -104,10 +105,10 @@
                    <ul class="nav navbar-nav left"><!-- nav navbar-nav left Begin -->
                        
                        <li class="<?php //if($active=='Home') echo"active"; ?>">
-                           <a href="index.php">Trang chủ</a>
+                            <a href="{{url('/')}}">Trang chủ</a>
                        </li>
                        <li class="<?php //if($active=='Shop') echo"active"; ?>">
-                           <a href="shop.php?p_cat=1&page=1">Cửa hàng</a>
+                            <a href="{{url('/user/cart')}}">Cửa hàng</a>
                        </li>
                        
                        <li class="<?php //if($active=='Contact') echo"active"; ?>">
@@ -118,14 +119,16 @@
                    
                </div><!-- padding-nav Finish -->
                
-               <a href="cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
+            <a href="{{url('user/cart')}}" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
                    
                    <i class="fa fa-shopping-cart"></i>
                    
-                   <span><?php 
-                //    if(isset($_SESSION['customer_email'])){
-                //        items($_SESSION['customer_email']);}
-                   ?> Sản phẩm trong giỏ hàng</span>
+                   <span> <?php $sosanpham = DB::table('cart_detail')
+                    ->join('users', 'users.id', '=', 'cart_detail.id_customer')
+                    ->where('users.email', '=', session()->get('customer_email'))
+                    ->count('*');
+                    echo $sosanpham;
+                    ?>  Sản phẩm trong giỏ hàng</span>
                    
                </a><!-- btn navbar-btn btn-primary Finish -->
                
