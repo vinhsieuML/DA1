@@ -8,5 +8,5 @@ class bill extends Model
 {
     //
     protected $table = 'bill';
-    public $timestamps ='false';
+    public $timestamps =false;
 }

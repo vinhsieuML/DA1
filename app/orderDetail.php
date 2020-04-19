@@ -8,5 +8,5 @@ class orderDetail extends Model
 {
     //
     protected $table= 'order_detail';
-    public $timestamp = 'false';
+    public $timestamp = false;
 }

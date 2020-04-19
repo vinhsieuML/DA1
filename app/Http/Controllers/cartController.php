@@ -62,7 +62,7 @@ class cartController extends Controller
                 ])
                 ->update(['quantity' => $qty]);
             if ($update) {
-                echo "<script>console.log($update)</script>";
+                echo "THANH_CONG";
             } else {
                 echo 'THAT_BAI';
             }

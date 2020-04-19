@@ -8,5 +8,5 @@ class boxes extends Model
 {
     //
     protected $table = 'boxes_section';
-    public $timestamps ='false';
+    public $timestamps =false;
 }

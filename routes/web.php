@@ -17,20 +17,26 @@ use Illuminate\Support\Facades\DB;
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'homepageController@LoadData')->name('homePage');
-
+    Route::get('/contact', function () {
+        return view('generic.contact');
+    });
     Route::get('/images/{type}/{name}','imageServe@image');
 
     Route::get('/productDetail/{proId}','productDetailController@getInfoById');
-    
-    Route::post('/productDetail/{proId}','productDetailController@add_cart');
 
-    //Dang Nhap-Dang Xuat
+    Route::post('/productDetail/{proId}','productDetailController@add_cart')->middleware('checkLogin');
+
+    //Shop 
+    Route::get('/shop/{type}/{detail}/{page}','shopController@viewShop');
+    //Dang Nhap-Dang Xuat-DangKi
     Route::get('/login','loginController@login');
     Route::post('/login','loginController@handleForm');
     Route::get('/logout','loginController@logout');
+    Route::get('/register','loginController@register');
+    Route::post('/register','loginController@handleRegisterForm');
 
     // Quan ly tai khoan
-    Route::group(['prefix' => 'user'], function () {
+    Route::group(['prefix' => 'user','middleware'=>'checkLogin'], function () {
         //Orders
         Route::get('orders', 'userController@orders')->name('userHome');
 

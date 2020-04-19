@@ -59,15 +59,13 @@
                         echo
                             '
                             <div class="item">';
-                    }
-                    echo "
-                        
+                    }?>
+
                             <a href='$url' target='_self'>
-                                <img src='images/slides_images/$slide_image' href = '$url'>
+                                <img src='{{url('images/slides_images/'. $slide_image)}}' href = '$url'>
                             </a>
                             </div>
-                        
-                        ";
+                        <?php
                     $count = $count + 1;
                 }
 
@@ -193,9 +191,9 @@
             
                 <div class='product eff'>
                 
-                    <a href='productDetail/<?php echo $pro_id ?>'>
+                    <a href='{{url('productDetail/'.$pro_id)}}'>
                     
-                        <img class='img-responsive' src='images/product_images/<?php echo $pro_link ?>'>
+                        <img class='img-responsive' src='{{url('images/product_images/' . $pro_link)}}'>
                     
                     </a>
                     
@@ -205,7 +203,7 @@
                     
                         <h3 class='pad_h'>
                 
-                            <a href='productDetail/<?php echo $pro_id ?>'>
+                            <a href='{{url('productDetail/'.$pro_id)}}'>
                                 <?php echo $pro_title ?>
 
                             </a>
@@ -219,13 +217,13 @@
                         
                         <p class='button'>
                         
-                            <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
+                            <a class='btn btn-default' href='{{url('productDetail/'.$pro_id)}}'>
 
                                 Chi tiết
 
                             </a>
                         
-                            <a class='btn btn-primary' href='productDetail/<?php echo $pro_id ?>'>
+                            <a class='btn btn-primary' href='{{url('productDetail/'.$pro_id)}}'>
 
                                 <i class='fa fa-shopping-cart'></i> Thêm vào giỏ hàng
 

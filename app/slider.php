@@ -8,5 +8,5 @@ class slider extends Model
 {
     //
     protected $table = 'slider';
-    public $timestamps = 'false';
+    public $timestamps = false;
 }
