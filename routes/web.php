@@ -54,6 +54,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('cart','cartController@viewCart');
         Route::post('cart/change','cartController@updateCart');
         Route::post('cart/pay','cartController@pay');
+        Route::post('cart','cartController@deleteProduct');
     });
 });
 

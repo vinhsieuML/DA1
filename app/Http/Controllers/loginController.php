@@ -146,9 +146,15 @@ class loginController extends Controller
 
             echo "<script>alert('Đăng Kí Thành Công')</script>";
 
-            echo "<script>window.open('checkout.php','_self')</script>";
+            $redirect = url('/');
+
+            echo "<script>window.open('$redirect','_self')</script>";
         } else {
             echo "<script>alert('Email Đã Tồn Tại')</script>";
+            
+            $redirect = url('/');
+
+            echo "<script>window.open('$redirect','_self')</script>";
         }
     }
 }

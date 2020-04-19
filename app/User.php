@@ -13,7 +13,7 @@ class User extends Model
     use Notifiable;
 
     protected $table = 'users';
-    public $timestamps = 'false';
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *

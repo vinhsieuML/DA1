@@ -27,9 +27,9 @@
             <div class="box">
                 <!-- box Begin -->
 
-                <form action="cart.php" method="post" enctype="multipart/form-data">
+            <form action="{{url('user/cart')}}" method="post" enctype="multipart/form-data">
                     <!-- form Begin -->
-
+                    {{ csrf_field() }}
                     <h1>Giỏ hàng</h1>
 
                     <p class="text-muted">Bạn có <?php //echo $sosanpham; 
@@ -125,7 +125,7 @@
 
                                         <td>
 
-                                            <input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?>">
+                                            <input type="checkbox" name="remove[]" value="<?php echo $pro_size; ?>">
 
                                         </td>
 
@@ -186,7 +186,7 @@
 
                             </button><!-- btn btn-default Finish -->
 
-                            <a id='COD' class="btn btn-primary">
+                            <a id="COD" class="btn btn-primary">
 
                                 Thanh Toán <i class="fa fa-chevron-right"></i>
 
@@ -207,35 +207,6 @@
             </div><!-- box Finish -->
 
 
-
-            <?php
-
-            // function update_cart()
-            // {
-
-            //     global $con;
-            //     if (isset($_POST['update'])) {
-            //         $email = $_POST['update'];
-            //         foreach ($_POST['remove'] as $remove_id) {
-
-            //             $delete_product = "delete from cart_detail where id_product='$remove_id' and id_customer=(SELECT id from users WHERE email = '$email')";
-
-            //             $run_delete = mysqli_query($con, $delete_product);
-
-            //             $run_delete = mysqli_query($con, $delete_product);
-
-            //             if (!$run_delete) {
-
-            //                 echo "<script>alert('Có lỗi xảy ra')</script>";
-            //             }
-            //         }
-            //         echo "<script>window.open('cart.php','_self')</script>";
-            //     }
-            // }
-
-            // echo @$up_cart = update_cart();
-
-            ?>
 
             <div id="row same-heigh-row">
                 <!-- #row same-heigh-row Begin -->
@@ -275,7 +246,7 @@
 
                                 <h3 class='pad_h'>
 
-                                    <a href='{{url('productDetail/'. $pro_id)}}>
+                                    <a href='{{url('productDetail/'. $pro_id)}}'>
         
                                     {{$pro_title}}
         
@@ -505,7 +476,7 @@ $customer_ward_id = $userInfo->wardID;
                     if (parseInt(response) === 1) {
                         alert('Giỏ hàng rỗng');
                     } else {
-                        window.open('customer/my_account.php?my_orders', '_self');
+                        window.open('{{url('user/orders')}}', '_self');
                     }
                 }
             });

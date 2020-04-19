@@ -37,6 +37,7 @@
                     </center><!-- center Finish -->
 
                 <form action="{{url('/register')}}" method="post" enctype="multipart/form-data">
+                    
                         {{ csrf_field() }}
                         <!-- form Begin -->
 

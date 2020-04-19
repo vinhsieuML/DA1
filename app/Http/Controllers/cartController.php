@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\cartDetail;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+
 class cartController extends Controller
 {
     //
@@ -27,7 +30,7 @@ class cartController extends Controller
                 DB::raw('GROUP_CONCAT(images.link) as imageID')
             )
             ->get();
-        
+
         $semilarPro = DB::table('product')
             ->join('images', 'product.id', '=', 'images.id_product')
             ->select('product.*', DB::raw('GROUP_CONCAT(images.link) as link'))
@@ -68,7 +71,26 @@ class cartController extends Controller
             }
         }
     }
+    //Delete product
+    public function deleteProduct(Request $request)
+    {
+        if (isset($request['update'])) {
+            $email = $request['update'];
+            foreach ($request['remove'] as $remove_id) {
+                $user = User::where('email','=',$email)->get()[0]->id;
+                $check = cartDetail::where([
+                    ['id_size_detail','=',$remove_id],
+                    ['id_customer','=',$user]
+                    ])->delete();
+                if (!$check) {
 
+                    echo "<script>alert('Có lỗi xảy ra')</script>";
+                }
+            }
+            $redirect = url('/user/cart');
+            echo "<script>window.open('$redirect','_self')</script>";
+        }
+    }
     public function pay(Request $request)
     {
         if (isset($request->type)) {
@@ -80,8 +102,8 @@ class cartController extends Controller
             $email = session()->get('customer_email');
 
             $select_cart = DB::table('cart_detail')
-                ->join('users', 'user.id', '=', 'cart_detail.id_customer')
-                ->where('user.email', '=', $email)
+                ->join('users', 'users.id', '=', 'cart_detail.id_customer')
+                ->where('users.email', '=', $email)
                 ->get();
             if ($select_cart->count() == 0) {
                 return 1;
@@ -129,9 +151,9 @@ class cartController extends Controller
                 curl_close($ch);
 
                 if ($result == "THANH CONG") {
-                    return "1";
+                    echo "1";
                 } else {
-                    return "2";
+                    echo "2";
                 }
 
                 //close connection
@@ -159,7 +181,7 @@ class cartController extends Controller
                 $result = curl_exec($ch);
                 curl_close($ch);
 
-                return $result;
+                echo $result;
             }
         }
     }
