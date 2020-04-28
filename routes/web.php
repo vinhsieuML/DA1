@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-
+//Phần cho user
 Route::group(['middleware' => ['web']], function () {
+
     Route::get('/', 'homepageController@LoadData')->name('homePage');
     Route::get('/contact', function () {
         return view('generic.contact');
@@ -35,9 +36,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/register','loginController@register');
     Route::post('/register','loginController@handleRegisterForm');
 
-
-    Route::get('/admin/login','adminloginController@login');
-    Route::post('admin/login','adminloginController@handleForm');
     // Quan ly tai khoan
     Route::group(['prefix' => 'user','middleware'=>'checkLogin'], function () {
         //Orders
@@ -62,4 +60,15 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     
+});
+
+//Admin (dung prefix: admin)
+Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
+    //Login(Không Cần Middleware check Auth)
+    Route::get('/login','adminloginController@login');
+    Route::post('/login','adminloginController@handleForm');
+
+    //Page trong can middleware (Tham khao file checkLogin trong Middleware)
+
+
 });

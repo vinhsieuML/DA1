@@ -21,6 +21,7 @@ class adminloginController extends Controller
     //
     public function login(Request $request)
     {
+        //SAI: phan nay cua User
         if (!$request->session()->has('username')) {
             return $this->getLoginForm();
         } else {
@@ -29,6 +30,7 @@ class adminloginController extends Controller
     }
     public function register(Request $request)
     {
+        //SAI: phan nay cua User
         if (!$request->session()->has('customer_email')) {
             return $this->getRegisterForm();
         } else {
@@ -37,6 +39,7 @@ class adminloginController extends Controller
     }
     public function logout()
     {
+        //SAI: phan nay cua User
         session()->flush();
         return redirect()->route('homePage');
     }
@@ -58,6 +61,7 @@ class adminloginController extends Controller
             return view('admin.signin');
         }
         else{
+            //SAI: phan nay cua User
             return redirect()->route('homePage');
         }
 
@@ -67,6 +71,7 @@ class adminloginController extends Controller
 
     public function handleRegisterForm(Request $request)
     {
+        //SAI: phan nay cua User
         $c_name = $request->c_name;
 
         $c_email = $request->c_email;
