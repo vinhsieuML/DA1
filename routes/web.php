@@ -35,6 +35,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/register','loginController@register');
     Route::post('/register','loginController@handleRegisterForm');
 
+
+    Route::get('/admin/login','adminloginController@login');
+    Route::post('admin/login','adminloginController@handleForm');
     // Quan ly tai khoan
     Route::group(['prefix' => 'user','middleware'=>'checkLogin'], function () {
         //Orders
@@ -55,6 +58,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('cart/change','cartController@updateCart');
         Route::post('cart/pay','cartController@pay');
         Route::post('cart','cartController@deleteProduct');
-    });
-});
 
+    });
+
+    
+});

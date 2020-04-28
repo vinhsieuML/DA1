@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-337.min.css')}}">
     <link rel="stylesheet" href="{{asset('font-awsome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+    
+
+
 </head>
 
 <body>
