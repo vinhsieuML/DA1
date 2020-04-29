@@ -164,13 +164,13 @@
                 <div class="collapse clearfix" id="search">
                     <!-- collapse clearfix Begin -->
 
-                    <form method="get" action="shop.php" class="navbar-form">
+                    <form method="get" action="" class="navbar-form" id="searchForm">
                         <!-- navbar-form Begin -->
 
                         <div class="input-group">
                             <!-- input-group Begin -->
 
-                            <input type="text" class="form-control" placeholder="Search" name="user_query" required>
+                            <input type="text" class="form-control" placeholder="Search" name="key" required>
 
                             <span class="input-group-btn">
                                 <!-- input-group-btn Begin -->
@@ -195,3 +195,11 @@
         </div><!-- container Finish -->
 
     </div><!-- navbar navbar-default Finish -->
+<script>
+    $("#searchForm").submit(function(e){
+        e.preventDefault;
+        window.location.href = "{{url('shop/search')}}" +"/"+ $("#searchForm").serialize().split('=')[1]+"/1";
+        return false;
+     });
+</script>
+    

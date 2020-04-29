@@ -12,7 +12,7 @@
             <ul class="breadcrumb">
                 <!-- breadcrumb Begin -->
                 <li>
-                    <a href="index.php">Trang chủ</a>
+                <a href="{{url("")}}">Trang chủ</a>
                 </li>
                 <li>
                     Cửa hàng

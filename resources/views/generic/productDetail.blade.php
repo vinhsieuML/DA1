@@ -27,14 +27,14 @@ $p_cat_title = $product_type->name;
             <ul class="breadcrumb">
                 <!-- breadcrumb Begin -->
                 <li>
-                    <a href="index.php">Trang chủ</a>
+                    <a href="{{url('')}}">Trang chủ</a>
                 </li>
                 <li>
-                    <a href="shop.php">Cửa hàng</a>
+                    <a href="{{url('shop')}}">Cửa hàng</a>
                 </li>
 
                 <li>
-                    <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a>
+                <a href="{{url('shop/pCat/' . $p_cat_id . '/1')}}"><?php echo $p_cat_title; ?></a>
                 </li>
                 <li> <?php echo $pro_title; ?> </li>
             </ul><!-- breadcrumb Finish -->

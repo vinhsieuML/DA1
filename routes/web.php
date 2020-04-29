@@ -28,6 +28,11 @@ Route::group(['middleware' => ['web']], function () {
 
     //Shop 
     Route::get('/shop/{type}/{detail}/{page}','shopController@viewShop');
+
+    Route::get('/shop', function () {
+        return redirect('shop/pCat/1/1');
+    });
+
     //Dang Nhap-Dang Xuat-DangKi
     Route::get('/login','loginController@login');
     Route::post('/login','loginController@handleForm');
