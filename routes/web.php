@@ -64,11 +64,7 @@ Route::group(['middleware' => ['web']], function () {
 
 //Admin (dung prefix: admin)
 Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
-    //Login(Không Cần Middleware check Auth)
+    //Page trong can middleware (Tham khao file checkLogin trong Middleware)
     Route::get('/login','adminloginController@login');
     Route::post('/login','adminloginController@handleForm');
-
-    //Page trong can middleware (Tham khao file checkLogin trong Middleware)
-
-
 });

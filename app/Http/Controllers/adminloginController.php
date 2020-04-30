@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class adminloginController extends Controller
+class adminLoginController extends Controller
 {
     private function getLoginForm()
     {

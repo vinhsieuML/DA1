@@ -17,7 +17,13 @@ class userController extends Controller
 
         $order = bill::where('id_customer', $user[0]->id)->orderBy('id', 'desc')->get();
 
-        return view('user.userPages.orders', ['user' => $user[0], 'orders' => $order]);
+        return view(
+            'user.userPages.orders',
+            [
+                'user' => $user[0],
+                'orders' => $order
+            ]
+        );
     }
 
     public function orderDetail($billId)
@@ -80,7 +86,8 @@ class userController extends Controller
         }
     }
 
-    public function changePass(){
+    public function changePass()
+    {
         return view('user.userPages.password');
     }
     public function changePassHandler(Request $request)
@@ -96,8 +103,8 @@ class userController extends Controller
         $sel_c_old_pass = "select * from users where email='$c_email' and password = '$c_old_pass'";
 
         $sel_c_old_pass = DB::table('users')
-                            ->where([['email','=',$c_email],['password','=',$c_old_pass]])
-                            ->count('*')->get();
+            ->where([['email', '=', $c_email], ['password', '=', $c_old_pass]])
+            ->count('*')->get();
         if ($sel_c_old_pass == 0) {
 
             echo "<script>alert('Mật khẩu cũ không đúng vui lòng thử lại')</script>";
@@ -112,9 +119,9 @@ class userController extends Controller
             exit();
         }
         $c_new_pass = md5($c_new_pass);
-        
-        $update_c_pass = DB::table('users')->where('email','=',$c_email)
-                    ->update(['password'=>$c_new_pass]);
+
+        $update_c_pass = DB::table('users')->where('email', '=', $c_email)
+            ->update(['password' => $c_new_pass]);
 
         if ($update_c_pass) {
 

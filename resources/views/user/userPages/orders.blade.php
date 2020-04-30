@@ -10,7 +10,7 @@
 
     <p class="text-muted">
 
-        Nếu bạn có thắc mắc, đừng ngại <a href="../contact.php">Liên hệ chúng tôi</a>. Chúng tôi sẽ trả lời sớm nhất có thể
+        Nếu bạn có thắc mắc, đừng ngại <a href="{{url('/contact')}}">Liên hệ chúng tôi</a>. Chúng tôi sẽ trả lời sớm nhất có thể
 
     </p>
 
@@ -48,6 +48,7 @@
             <!--  tbody Begin  -->
 
             <?php
+
             foreach ($orders as $order) {
                 $order_id = $order->id;
 
@@ -69,13 +70,14 @@
                 <tr>
                     <!--  tr Begin  -->
 
-                    <th> <a href="{{url('/user/orderInfo/'.$order_id)}}" disable> ORD{{$order_id}} </a></th>
+                    <th> <a href="{{url('/user/orderInfo/'.$order_id)}}" disable> ORD {{$order_id}} </a></th>
                     <td> <?php echo number_format($due_amount, 0, ',', '.'); ?> đ</td>
                     <td> <?php $date = date_create($order_date);
                             echo date_format($date, 'd-m-Y');
                             ?></td>
                     </td>
-                    <td> <?php
+                    <td> 
+                        <?php
                             switch ($order_status) {
                                 case 0:
                                     echo "<p style='color:blue;'>Đang Chờ Duyệt COD</p>";
@@ -95,8 +97,7 @@
                                 case 5:
                                     echo "<p style='color:red;'>Đã Hủy</p>";
                                     break;
-                            }
-                            ?>
+                            } ?>
                     </td>
                     <td>
                         <?php echo $order_code ?>
