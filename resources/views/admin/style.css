@@ -1,0 +1,20 @@
+@media (min-width: 768px){
+    .side-nav{
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        width: 255px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: #055542;
+        padding-bottom: 40px;
+        border-radius: 0;
+    }
+    .side-nav>li>a{
+        width: 255px;
+    }
+    .side-nav>li>a:hover, .side-nav>li>a:focus{
+        outline: none;
+        background-color: #000000 !important;
+    }
+}

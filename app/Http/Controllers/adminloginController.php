@@ -44,6 +44,10 @@ class adminLoginController extends Controller
         return redirect()->route('homePage');
     }
 
+    //Load trang giao dien Admin
+    public function LoadDashBoard(){
+        return view('admin.dashboard');
+    }
 
     public function handleForm(Request $request)
     {
@@ -62,7 +66,8 @@ class adminLoginController extends Controller
         }
         else{
             //SAI: phan nay cua User
-            return redirect()->route('homePage');
+            //return redirect()->route('homePage');
+            return redirect()->route('dashBoard');
         }
 
        
