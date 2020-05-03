@@ -64,6 +64,7 @@ body{
 
 .navbar{
     background: #ffffff;
+    min-height: 70px;
 }
 
 /* Header Admin Styles */
@@ -95,8 +96,7 @@ body{
 }
 
 
-#adminnav .navbar-nav li a:hover,
-.navbar-nav li.active a {
+#adminnav .navbar-nav li a:hover {
   color: white !important;
   background-color: #222222 !important;
 }
@@ -942,6 +942,35 @@ body{
 }
 
 /* */
+
+
+
+
+
+#wrapper{
+    padding-left: 0px;
+}
+
+#page-wrapper{
+    width: 100%;
+    padding: 0;
+    background-color: #f9f9f9;
+    background-color: transparent;
+}
+
+@media (min-width: 768px){
+ 
+
+    #wrapper{
+        padding-left: 270px;
+}
+
+    #page-wrapper{
+        padding: 10px;
+}
+}
+/**/
+
 
 /* styling the label finish */
 

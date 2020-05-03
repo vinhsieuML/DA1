@@ -84,7 +84,7 @@
     
         <ul class="nav navbar-nav side-nav"><!-- nav navbar-nav side-nav begin -->
             <li><!-- li begin -->
-                <a href="index.php?dashboard"><!-- a href begin -->
+                <a href="dashboard"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-dashboard"></i> Dashboard
                         
@@ -140,10 +140,10 @@
                 
                 <ul id="p_cat" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_p_cat"> <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Danh Mục</a>
+                        <a href="{{url('admin/insert_p_type')}}"> <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Danh Mục</a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_p_cats">  <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách Danh Mục</a>
+                        <a href="{{url('admin/view_p_type')}}">  <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách Danh Mục</a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
@@ -159,7 +159,7 @@
                 
                 <ul id="cat" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_size"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Size </a>
+                        <a href="============"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Size </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
                         <a href="index.php?view_size">  <i class="glyphicon glyphicon-th-list"></i>  &nbsp Danh Sách Các Size </a>

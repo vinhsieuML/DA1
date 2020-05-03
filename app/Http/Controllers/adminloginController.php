@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\admin;
+use App\product_type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -72,6 +73,70 @@ class adminLoginController extends Controller
 
        
         
+    }
+
+
+  
+
+    public function getpro_type()
+    {
+        $product_type = product_type::all();
+        
+        return view("admin.producttype.view_pro_type", ["product_type"=>$product_type]);
+
+    
+    }
+
+    public function insert_pro_type()
+    {
+        
+        
+        return view('admin.producttype.insert_pro_type');
+
+    
+    }
+    
+
+    public function insert_pro_type_form(Request $request)
+    {
+    //    $this->validate($request,[
+    //         'id' => 'required',
+    //         'name' => 'required',
+    //         'image' => 'required'
+    //    ]);
+    //    $product_type = new product_type([
+    //     'id' => $request->get('id'),
+    //     'name' => $request->get('name'),
+    //     'image' => $request->get('image')
+    //    ]);
+        
+    //    $product_type->save();
+    //    echo "<script>alert('Your New Product Category Has Been Inserted')</script>";
+    //     return redirect()-> route('viewproType');
+
+
+
+
+
+        // $pro_name = $request->p_name;
+        
+        // DB::table('product_type')->insert(
+        //     ['name' => $p_name, 'image' => 'alu.jpg']
+        // );
+
+
+
+        if($request->isMethod('post'))
+        {
+            $name = $request->input("name");
+            $image = $request->input("image");
+
+            $product_type = new product_type();
+            $product_type->name =$name;
+            $product_type->image=$image;
+            $product_type->save();
+        }
+        return redirect()-> route('viewproType');
     }
 
     public function handleRegisterForm(Request $request)

@@ -75,4 +75,9 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     
     // Route::get('/login','adminloginController@l');
     Route::get('/dashboard', 'adminloginController@LoadDashBoard')->name('dashBoard');
+
+    //Quan li
+    Route::get('/view_p_type','adminloginController@getpro_type')-> name('viewproType');
+    Route::get('/insert_p_type','adminloginController@insert_pro_type');
+    Route::post('/insert_p_type','adminloginController@insert_pro_type_form');
 }); 
