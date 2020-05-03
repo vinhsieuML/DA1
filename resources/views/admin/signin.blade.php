@@ -13,7 +13,7 @@
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 
 </head>
-
+<!-- 
 <body>
   
     <form class="ad-box" method="post" action="{{url('admin/login')}}" >
@@ -25,6 +25,24 @@
         <input type="submit" name="login" value="Đăng nhập">
     </form>
    
+</body> -->
+
+<body class="login"> 
+    <div class="contact-form">
+        <img src= "../../storage/images/other_images/3.jpg" class="avatar">
+        <h2>Admin Login</h2>
+        <form method="post" action="{{url('admin/login')}}">
+            {{ csrf_field() }}
+            <br><br>
+            <p>Email</p>
+            <input type="text" name="c_email" placeholder="Enter Email" required>
+            <p>Password</p>
+            <input type="password" name="c_pass" placeholder="Enter Password" required>
+            <input type="submit" name="login" value="Đăng nhập">
+            
+        </form>
+    </div>
 </body>
+
 
 </html>

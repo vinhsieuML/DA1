@@ -570,7 +570,10 @@ body{
     line-height: 55px;
     color: #999;
     font-size: 13px;
+    margin: 0 0 0px !important;
 }
+
+
 
 /*  Copyright Styles  */
 
@@ -730,18 +733,33 @@ body{
 /* test giao dien admin*/
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 body{
+    
+  /* width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: url("../../storage/images/other_images/back1.jpg") no-repeat; 
+  background: url("../../storage/images/other_images/baswall.jpeg") no-repeat; 
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-position-y: -300px;
+   */
 
-                      /* <------ */
-    background-repeat:   repeat;
+    /* <------ */
+
+    content: '';
+  
+    width: 100vw;
+    height: 100vh;
+    
+    background: url("../../storage/images/other_images/baswall.jpeg") no-repeat;  
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
   
 }
 
@@ -830,6 +848,98 @@ body{
 }
 
 
+
+/* login admin*/
+.login{
+    margin: 0;
+    padding: 0;
+}
+.login::before {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url("../../storage/images/other_images/banner3.jpg")  no-repeat !important; */
+    background: url("../../storage/images/other_images/loginwall.jpg") no-repeat;  
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+.login .contact-form
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.65);
+}
+.login .avatar {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-80px/2);
+    left: calc(50% - 40px);
+}
+.login .contact-form h2 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.login .contact-form p
+{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+.login .contact-form input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login .contact-form input[type="text"], .contact-form input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.login .contact-form input[type="submit"] {
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    background: red;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin-top: 15%;
+}
+.login .contact-form a
+{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 /* */
 
