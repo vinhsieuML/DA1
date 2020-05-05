@@ -78,6 +78,8 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
 
     //Quan li product type
     Route::get('/view_p_type','adminloginController@getpro_type')-> name('viewproType');
+    //ajax
+    Route::get('/view_p_type/fetch_data', 'adminloginController@fetch_data');
 
     Route::get('/insert_p_type','adminloginController@insert_pro_type');
     Route::post('/insert_p_type','adminloginController@insert_pro_type_form');

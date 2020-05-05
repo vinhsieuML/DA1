@@ -8,7 +8,10 @@
             <link rel="stylesheet" href="{{asset('css/bootstrap-337.min.css')}}">
             <link rel="stylesheet" href="{{asset('font-awsome/css/font-awesome.min.css')}}">
             <link rel="stylesheet" href="{{asset('css/style.css')}}">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+            
+              
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         </head>
 
         <body>
@@ -35,68 +38,10 @@
                                                         
                                                         </h3><!-- panel-title finish -->
                                                 </div><!-- panel-heading finish -->
-                                                
-                                                <div class="panel-body"><!-- panel-body begin -->
-                                                        <div class="table-responsive"><!-- table-responsive begin -->
-                                                        <table class="table table-hover table-striped table-bordered"><!-- tabel tabel-hover table-striped table-bordered begin -->
-                                                                
-                                                                <thead><!-- thead begin -->
-                                                                <tr><!-- tr begin -->
-                                                                        <th> Mã Danh Mục </th>
-                                                                        <th> Tên Danh Mục </th>
-                                                                        <th> Hình </th>
-                                                                        <!-- <th> Top Product Category </th> -->
-                                                                        <th> Thao tác </th>
-                                                                       
-                                                                </tr><!-- tr finish -->
-                                                                </thead><!-- thead finish -->
-                                                                
-                                                                <tbody><!-- tbody begin -->
-                                                                
+                                                <div id="table_data" class="panel-body">
 
-                                                                <?php
-                                                                foreach ($product_type as $key => $value) {
-                                                                        
-                                                                        $p_type_id = $value->id;
-                                                                        $p_type_name = $value->name;
-                                                                        $p_type_image = $value->image;
-
-                                                                ?>
-                                                                <tr><!-- tr begin -->
-                                                                        <td> {{$p_type_id}} </td>
-                                                                        <td> {{$p_type_name}}  </td>
-                                                                        <td>  <img width="65" height="65" src='{{url('images/other_images/'. $p_type_image)}}' alt="">  </td>
-                                                                        <!-- <td width="300">  </td> -->
-                                                                        <td> 
-                                                                        <!-- <a href="{{url('admin/edit_p_type')}}"> -->
-
-                                                                        <a href='{{url('admin/edit_p_type/'.$p_type_id)}}'>
-
-                                                                                <br>
-                                                                                <i class="fa fa-pencil"></i> Chỉnh sửa
-                                                                        </a>
-                                                                        </td>
-                                                                       
-                                                                </tr><!-- tr finish -->
-                                                           
-
-
-                                                                <?php } ?>
-
-
-                                                               
-                                                                
-                                                                
-                                                                </tbody><!-- tbody finish -->
-                                                                
-                                                        </table><!-- tabel tabel-hover table-striped table-bordered finish -->
-                                                        </div><!-- table-responsive finish -->
-
-
-                                                        <div>{{$product_type->links()}}<div>                                  
-
-                                                </div><!-- panel-body finish -->
-                                                
+                                                        @include('./admin/producttype/pagination_data')
+                                                </div>
                                                 </div><!-- panel panel-default finish -->
                                         </div><!-- col-lg-12 finish -->
                                         </div><!-- row 2 finish -->
@@ -107,7 +52,31 @@
                         </center>
                 </div><!-- wrapper finish -->
 
-                <script src="{{asset('js/bootstrap-337.min.js')}}"></script>
+             
         </body>
 
-        </html>
+</html>
+<script src="{{asset('js/bootstrap-337.min.js')}}"></script>
+
+<script>
+$(document).ready(function(){
+
+        $(document).on('click','.pagination a', function(e){
+  event.preventDefault(); 
+  var page = $(this).attr('href').split('page=')[1];
+  fetch_data(page);
+ });
+
+ function fetch_data(page)
+ {
+  $.ajax({
+   url:"view_p_type/fetch_data?page="+page,
+   success:function(data)
+   {
+    $('#table_data').html(data);
+   }
+  });
+ }
+ 
+});
+</script>

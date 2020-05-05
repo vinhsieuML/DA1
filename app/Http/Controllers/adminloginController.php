@@ -83,10 +83,22 @@ class adminLoginController extends Controller
         // $product_type = product_type::all()->paginate(3);
         $product_type = DB::table('product_type')->paginate(5);
 
+       
         return view("admin.producttype.view_pro_type", ["product_type"=>$product_type]);
-
     
     }
+
+    //AJAX pagination
+    function fetch_data(Request $request)
+    {
+     if($request->ajax())
+     {
+      $product_type = DB::table('product_type')->paginate(5);
+      return view('admin.producttype.pagination_data', compact('product_type'))->render();
+
+     }
+    }
+
 
     public function insert_pro_type()
     {
