@@ -29,9 +29,9 @@
                                         <div class="col-lg-12"><!-- col-lg-12 begin -->
                                                 <div class="panel panel-default"><!-- panel panel-default begin -->
                                                 <div class="panel-heading"><!-- panel-heading begin -->
-                                                        <h3 class="panel-title"><!-- panel-title begin -->
+                                                        <h3 class="panel-title" style="padding:10px"><!-- panel-title begin -->
                                                         
-                                                        <i class="fa fa-tags fa-fw"></i> View Product Categories
+                                                         <font style="font-size:20px" ><b> <i class="fa fa-tags fa-fw"></i> DANH SÁCH DANH MỤC </b> </font>
                                                         
                                                         </h3><!-- panel-title finish -->
                                                 </div><!-- panel-heading finish -->
@@ -44,9 +44,10 @@
                                                                 <tr><!-- tr begin -->
                                                                         <th> Mã Danh Mục </th>
                                                                         <th> Tên Danh Mục </th>
+                                                                        <th> Hình </th>
                                                                         <!-- <th> Top Product Category </th> -->
-                                                                        <th> Chỉnh sửa </th>
-                                                                        <th> Xóa </th>
+                                                                        <th> Thao tác </th>
+                                                                       
                                                                 </tr><!-- tr finish -->
                                                                 </thead><!-- thead finish -->
                                                                 
@@ -56,24 +57,26 @@
                                                                 <?php
                                                                 foreach ($product_type as $key => $value) {
                                                                         
-                                                                        $p_id = $value->id;
-                                                                        $p_name = $value->name;
+                                                                        $p_type_id = $value->id;
+                                                                        $p_type_name = $value->name;
+                                                                        $p_type_image = $value->image;
 
                                                                 ?>
                                                                 <tr><!-- tr begin -->
-                                                                        <td> {{$p_id}} </td>
-                                                                        <td> {{$p_name}}  </td>
+                                                                        <td> {{$p_type_id}} </td>
+                                                                        <td> {{$p_type_name}}  </td>
+                                                                        <td>  <img width="65" height="65" src='{{url('images/other_images/'. $p_type_image)}}' alt="">  </td>
                                                                         <!-- <td width="300">  </td> -->
                                                                         <td> 
-                                                                        <a href="index.php?edit_p_cat=  ">
+                                                                        <!-- <a href="{{url('admin/edit_p_type')}}"> -->
+
+                                                                        <a href='{{url('admin/edit_p_type/'.$p_type_id)}}'>
+
+                                                                                <br>
                                                                                 <i class="fa fa-pencil"></i> Chỉnh sửa
                                                                         </a>
                                                                         </td>
-                                                                        <td> 
-                                                                        <a href="index.php?delete_p_cat= ">
-                                                                                <i class="fa fa-trash"></i> Xóa
-                                                                        </a>
-                                                                        </td>
+                                                                       
                                                                 </tr><!-- tr finish -->
                                                            
 
@@ -88,6 +91,10 @@
                                                                 
                                                         </table><!-- tabel tabel-hover table-striped table-bordered finish -->
                                                         </div><!-- table-responsive finish -->
+
+
+                                                        <div>{{$product_type->links()}}<div>                                  
+
                                                 </div><!-- panel-body finish -->
                                                 
                                                 </div><!-- panel panel-default finish -->

@@ -80,8 +80,9 @@ class adminLoginController extends Controller
 
     public function getpro_type()
     {
-        $product_type = product_type::all();
-        
+        // $product_type = product_type::all()->paginate(3);
+        $product_type = DB::table('product_type')->paginate(5);
+
         return view("admin.producttype.view_pro_type", ["product_type"=>$product_type]);
 
     
@@ -99,45 +100,93 @@ class adminLoginController extends Controller
 
     public function insert_pro_type_form(Request $request)
     {
-    //    $this->validate($request,[
-    //         'id' => 'required',
-    //         'name' => 'required',
-    //         'image' => 'required'
-    //    ]);
-    //    $product_type = new product_type([
-    //     'id' => $request->get('id'),
-    //     'name' => $request->get('name'),
-    //     'image' => $request->get('image')
-    //    ]);
-        
-    //    $product_type->save();
-    //    echo "<script>alert('Your New Product Category Has Been Inserted')</script>";
-    //     return redirect()-> route('viewproType');
-
-
-
-
-
-        // $pro_name = $request->p_name;
-        
-        // DB::table('product_type')->insert(
-        //     ['name' => $p_name, 'image' => 'alu.jpg']
-        // );
-
+    
 
 
         if($request->isMethod('post'))
         {
             $name = $request->input("name");
-            $image = $request->input("image");
+            $image_name = $request->file('image')->getClientOriginalName();
 
             $product_type = new product_type();
             $product_type->name =$name;
-            $product_type->image=$image;
+            $product_type->image=$image_name;
             $product_type->save();
+
+            $image = $request->file('image');
+            $image->move(base_path('\storage\images\other_images'), $image_name);
         }
+        echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
         return redirect()-> route('viewproType');
     }
+
+
+   
+
+    public function edit_pro_type_form(Request $request, $pt_id)
+    {   
+        // $new_name = $request->input('p_cat_title');
+        // $new_image = $request->file('p_cat_image')->getClientOriginalName(); 
+        // $image = $request->file('image');
+        // $image->move(base_path('\storage\images\other_images'), $image_name);
+
+        // DB::table('product_type')
+        //     ->where('id', $pt_id)
+        //     ->update(['name' => $new_name,'image' => $new_image ]);
+
+
+        try { 
+            $new_name = $request->input('p_cat_title');
+            $new_image = $request->file('p_cat_image')->getClientOriginalName(); 
+            $image = $request->file('p_cat_image');
+            
+
+            $edit_pt = DB::table('product_type')
+                ->where('id', $pt_id)
+                ->update(['name' => $new_name,'image' => $new_image ]);
+              
+
+                echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        
+                  
+            
+
+            } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+            // Note any method of class PDOException can be called on $ex.
+                echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                return redirect()-> route('admin.producttype.edit_pro_type');
+        }
+        $image->move(base_path('\storage\images\other_images'), $new_image);
+
+      
+        return redirect()-> route('viewproType');
+
+    }
+
+
+    public function getTypeInfoById($proTypeId)
+    {
+        // Thong Tin San Pham
+        $product_type = DB::table('product_type')
+            
+            ->select('product_type.*')
+            ->where('product_type.id', '=', $proTypeId)
+         
+            ->get();
+       
+        // San Pham Recommend
+       
+        return view(
+            'admin.producttype.edit_pro_type',
+            [
+        
+                'product_type' => $product_type[0]
+              
+            ]
+        );
+    }
+
 
     public function handleRegisterForm(Request $request)
     {
