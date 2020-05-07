@@ -105,7 +105,7 @@
                         <a href="index.php?insert_product">     <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm mới sản phẩm </a>        
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_products">   <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách sản phẩm </a> 	
+                        <a href="{{url('admin/view_product')}}">   <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách sản phẩm </a> 	
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 

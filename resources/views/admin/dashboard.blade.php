@@ -8,7 +8,10 @@
             <link rel="stylesheet" href="{{asset('css/bootstrap-337.min.css')}}">
             <link rel="stylesheet" href="{{asset('font-awsome/css/font-awesome.min.css')}}">
             <link rel="stylesheet" href="{{asset('css/style.css')}}">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+            
+              
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         </head>
 
         <body>
@@ -17,18 +20,17 @@
                         <!-- #wrapper begin -->
 
                         @include('./layouts.adminsidebar')
-
+                        <center>
                         <div id="page-wrapper">
-                                <!-- #page-wrapper begin -->
-                                <div class="container-fluid">
-                                        <!-- container-fluid begin -->
-                                       
-
-                                </div><!-- container-fluid finish -->
+                        @yield('content')
                         </div><!-- #page-wrapper finish -->
+                        </center>
                 </div><!-- wrapper finish -->
 
-                <script src="{{asset('js/bootstrap-337.min.js')}}"></script>
+             
         </body>
 
-        </html>
+</html>
+
+<script src="{{asset('js/bootstrap-337.min.js')}}"></script>
+

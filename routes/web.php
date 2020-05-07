@@ -76,16 +76,27 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     // Route::get('/login','adminloginController@l');
     Route::get('/dashboard', 'adminloginController@LoadDashBoard')->name('dashBoard');
 
-    //Quan li product type
-    Route::get('/view_p_type','adminloginController@getpro_type')-> name('viewproType');
-    //ajax
-    Route::get('/view_p_type/fetch_data', 'adminloginController@fetch_data');
+    //Quản lí product type
+    //Xem
+    Route::get('/view_p_type','manage_product_typeController@getpro_type')-> name('viewproType');
+        //--ajax phân trang
+    Route::post('/view_p_type/fetch_data_product_type', 'manage_product_typeController@fetch_data_product_type')->name('paginationprotype.fetch');;
 
-    Route::get('/insert_p_type','adminloginController@insert_pro_type');
-    Route::post('/insert_p_type','adminloginController@insert_pro_type_form');
+    //Thêm
+    Route::get('/insert_p_type','manage_product_typeController@insert_pro_type');
+    Route::post('/insert_p_type','manage_product_typeController@insert_pro_type_form');
 
-    Route::get('/edit_p_type/{proTypeId}','adminloginController@getTypeInfoById');
-    Route::post('/edit_p_type/{proTypeId}','adminloginController@edit_pro_type_form');
+    //Sửa
+    Route::get('/edit_p_type/{proTypeId}','manage_product_typeController@getTypeInfoById');
+    Route::post('/edit_p_type/{proTypeId}','manage_product_typeController@edit_pro_type_form');
+
+
+
+    //Quản lí product
+    Route::get('/view_product','manage_productController@getproduct')-> name('viewPro');
+        //ajax phân trang
+    Route::post('/view_product/fetch_data_product', 'manage_productController@fetch_data_product')->name('paginationpro.fetch');
+
 
 
 }); 
