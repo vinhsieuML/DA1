@@ -84,7 +84,7 @@
     
         <ul class="nav navbar-nav side-nav"><!-- nav navbar-nav side-nav begin -->
             <li><!-- li begin -->
-                <a href="dashboard"><!-- a href begin -->
+                <a href="{{url('admin/dashboard')}}"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-dashboard"></i> Dashboard
                         
@@ -105,7 +105,7 @@
                         <a href="index.php?insert_product">     <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm mới sản phẩm </a>        
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="{{url('admin/view_product')}}">   <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách sản phẩm </a> 	
+                        <a href="{{url('admin/view_products')}}">   <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách sản phẩm </a> 	
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
