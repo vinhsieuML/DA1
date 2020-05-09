@@ -32,7 +32,7 @@
                     
     <div class="table-responsive"><!-- table-responsive begin -->
     
-    <table class="table table-hover table-striped table-bordered"><!-- tabel tabel-hover table-striped table-bordered begin -->
+    <table id="example" class="table table-hover table-striped table-bordered"><!-- tabel tabel-hover table-striped table-bordered begin -->
             
             <thead><!-- thead begin -->
             <tr><!-- tr begin -->
@@ -55,7 +55,7 @@
 
                              
             </table><!-- tabel tabel-hover table-striped table-bordered finish -->
-            <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
+            <input type="hidden" name="hidden_page" id="hidden_page" value="{{ $data->currentPage() }}" />
             <input type="hidden" name="hidden_column_name" id="hidden_column_name" value="id" />
             <input type="hidden" name="hidden_sort_type" id="hidden_sort_type" value="asc" />
 
@@ -137,13 +137,17 @@ $(document).ready(function(){
   $('#hidden_page').val(page);
   var column_name = $('#hidden_column_name').val();
   var sort_type = $('#hidden_sort_type').val();
-
+        
   var query = $('#serach').val();
 
   $('li').removeClass('active');
         $(this).parent().addClass('active');
   fetch_data(page, sort_type, column_name, query);
  });
+
+
+
+
 
 });
 </script>

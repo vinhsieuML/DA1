@@ -102,7 +102,7 @@
                 
                 <ul id="products" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_product">     <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm mới sản phẩm </a>        
+                        <a href="{{url('admin/insert_product')}}">     <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm mới sản phẩm </a>        
                     </li><!-- li finish -->
                     <li><!-- li begin -->
                         <a href="{{url('admin/view_products')}}">   <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách sản phẩm </a> 	

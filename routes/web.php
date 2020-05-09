@@ -94,20 +94,26 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
 
     //Quản lí product
     Route::get('/view_product','manage_productController@getproduct');
-        //ajax phân trang
+        
     Route::post('/view_product/fetch_data_product', 'manage_productController@fetch_data_product')->name('paginationpro.fetch');
 
     //Xem 
     Route::post('/view_products/fetch_data', 'manage_productController@fetch_data');
-    Route::get('/view_products', 'manage_productController@index');
+    Route::get('/view_products', 'manage_productController@index')->name('viewpro');
 
     Route::get('/deactive/{proId}','manage_productController@deactivate');
     Route::get('/active/{proId}','manage_productController@activate');
 
+    //Thêm
+    Route::get('/insert_product','manage_productController@getInsert');
+    Route::get('/insert_product/action', 'manage_productController@action')->name('live_search.action');
+    Route::post('/insert_product','manage_productController@insert_product');
+
 
     //Sửa
     Route::get('/edit_product/{proId}','manage_productController@getTypeInfoById');
-    Route::post('/edit_product/{proId}','manage_productController@edit_pro_form');
+    Route::post('/edit_product/{proId}','manage_productController@edit_product');
+    Route::get('/edit_product/action', 'manage_productController@action_insert')->name('live_search.actionfix');
 
 
 

@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class images extends Model
+class size_detail extends Model
 {
     //
-    protected $table= 'images';
+    protected $table = 'size_detail';
     public $timestamps = false;
+    
 }

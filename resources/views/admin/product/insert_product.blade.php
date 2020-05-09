@@ -5,13 +5,8 @@
     <br><br>
 
     <?php
-       $product_id = $product->id;
-       $product_name = $product->name;
-       $product_hang = $product->id_hang;
-       $product_loai = $product->id_type;
-       $product_price = $product->price;
-       $product_des = $product->description;
-       $k =0;
+      
+        
     ?>
 
 
@@ -21,13 +16,13 @@
                 <div class="panel-heading"><!-- panel-heading begin -->
                     <h3 class="panel-title" style="padding:10px"><!-- panel-title begin -->
                         
-                        <font style="font-size:20px" ><b> <i class="fa fa-tags fa-fw"></i> CHỈNH SỬA SẢN PHẨM </b> </font>
+                        <font style="font-size:20px" ><b> <i class="fa fa-tags fa-fw"></i> THÊM SẢN PHẨM </b> </font>
                         
                     </h3><!-- panel-title finish -->
                 </div><!-- panel-heading finish -->
                 
                 <div class="panel-body"><!-- panel-body begin -->
-                    <form action='{{url('admin/edit_product/'.$product_id)}}' class="form-horizontal" method="post" enctype="multipart/form-data"><!-- form-horizontal begin -->
+                    <form action="{{url('admin/insert_product')}}" class="form-horizontal" method="post" enctype="multipart/form-data"><!-- form-horizontal begin -->
                     
                         {{ csrf_field() }}
                         <div class="form-group"><!-- form-group begin -->
@@ -40,7 +35,7 @@
                             
                             <div class="col-md-6"><!-- col-md-6 begin -->
                             
-                                <input value="{{$product_name}}" name="p_name" type="text" class="form-control" required>
+                                <input value="" name="p_name" type="text" class="form-control" required>
                             
                             </div><!-- col-md-6 finish -->
                         
@@ -59,7 +54,7 @@
 
                             <div class="col-md-6"><!-- col-md-6 begin -->
                             <select name="p_hang" class="form-control" onchange="showUser(this.value)">
-                            
+                            <option selected disabled> Chọn hãng </option>
                            
                                     <!-- col-md-6 bat dau -->
 
@@ -70,16 +65,13 @@
                                             $idall = $row -> id;
                                             $title = $row -> name;
                                             
-                                            if ($idall == $product_hang) {
-                                                ?>   
-                                            <option value='{{$idall}}' selected> {{$title}} </option>
+                                        ?>   
+                                       
                                     
-                                            <?php
-                                            } else { ?>
+                                        
                                               <option value='{{$idall}}' > {{$title}} </option>
                                               <?php } ?>
                                               
-                                   <?php } ?>
                                
                                   
 
@@ -114,24 +106,20 @@
                            
                                     <!-- col-md-6 bat dau -->
 
-                                                                    
-                                                                
-                                <?php
+                                    
+                                    <?php
 
-                                foreach ($product_type as $row){
-                                $idall = $row -> id;
-                                $title = $row -> name;
-
-                                if ($idall == $product_loai) {
-                                    ?>   
-                                <option value='{{$idall}}' selected> {{$title}} </option>
-
-                                <?php
-                                } else { ?>
-                                <option value='{{$idall}}' > {{$title}} </option>
-                                <?php } ?>
-                                
-                                <?php } ?>
+                                            foreach ($product_type as $row){
+                                            $idall = $row -> id;
+                                            $title = $row -> name;
+                                            
+                                           
+                                                ?>   
+                                           
+                                         
+                                              <option value='{{$idall}}' > {{$title}} </option>
+                                              <?php } ?>
+                                              
                                  
                                   
 
@@ -178,31 +166,9 @@
                                                 <!-- tbody bat dau -->
 
                                              
-                                                
+
+                                   
                                             
-                                                <?php 
-                                                    
-                                                    $available = isset($_POST[$k][0]) ? $_POST[$k][0] : "";
-                                                
-                                                    foreach($size_detail as $row) {
-                                                        $k++;
-                                                        $size_name = $row->name;
-                                                        $size_quantity = $row->number;
-                                                    
-                                                    
-                                                    ?>
-
-                                                    <tr>
-                                                    <td> {{$size_name}} </td>
-                                                    <td>
-                                                    <input type='number' min='0' name="p_sl_size<?php echo"$k"; ?>" class='form-control' placeholder='Số lượng' value= {{ $size_quantity}}  oninput="validity.valid||(value='');">
-                                                    </td>
-                                                    </tr>
-
-                                                    <?php
-                                                    } 
-                                                ?>
-                                                                                                
 
                                                 
 
@@ -245,7 +211,7 @@
                         
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
-                            <input value="{{$product_price}}" name="p_price" type="number" min="0" class="form-control" oninput="validity.valid||(value='');" required>
+                            <input value="" name="p_price" type="number" min="0" class="form-control" oninput="validity.valid||(value='');" required>
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -263,7 +229,7 @@
                         
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
-                            <input value="{{$product_des}}" name="p_des" type="text" class="form-control" required>
+                            <input value="" name="p_des" type="text" class="form-control" required>
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -294,7 +260,7 @@
                             
                             <div class="col-md-6"><!-- col-md-6 begin -->
                             
-                                <input value="Cập nhật" name="update" type="submit" class="form-control btn btn-primary">
+                                <input value="Thêm sản phẩm" name="update" type="submit" class="form-control btn btn-primary">
                             
                             </div><!-- col-md-6 finish -->
                         
