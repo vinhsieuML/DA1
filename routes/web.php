@@ -115,6 +115,10 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     Route::post('/edit_product/{proId}','manage_productController@edit_product');
     Route::get('/edit_product/action', 'manage_productController@action_insert')->name('live_search.actionfix');
 
+    //Quản lý hãng
+    Route::get('/view_hang','manage_hangController@get_hang')-> name('viewhang');
+    //--ajax phân trang
+    Route::post('/view_hang/fetch_data_hang', 'manage_hangController@fetch_data_hang')->name('paginationhang.fetch');;
 
 
 }); 

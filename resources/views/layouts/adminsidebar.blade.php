@@ -121,10 +121,10 @@
                 
                 <ul id="manufacturer" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_manufacturer"> <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Hãng Sản Xuất </a>
+                        <a href="{{url('admin/insert_hang')}}"> <i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Hãng Sản Xuất </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_manufacturers">   <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách Hãng Sản Xuất </a>
+                        <a href="{{url('admin/view_hang')}}">   <i class="glyphicon glyphicon-th-list"></i> &nbsp Danh Sách Hãng Sản Xuất </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
