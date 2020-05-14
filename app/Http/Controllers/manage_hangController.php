@@ -43,104 +43,104 @@ class manage_hangController extends Controller
     }
 
 
-    // public function insert_pro_type()
-    // {
+    public function insert_hang()
+    {
         
         
-    //     return view('admin.producttype.insert_pro_type');
+        return view('admin.hang.insert_hang');
 
     
-    // }
+    }
     
 
-    // public function insert_pro_type_form(Request $request)
-    // {
+    public function insert_hang_form(Request $request)
+    {
     
 
 
-    //     if($request->isMethod('post'))
-    //     {
-    //         $name = $request->input("name");
-    //         $image_name = $request->file('image')->getClientOriginalName();
+        if($request->isMethod('post'))
+        {
+            $name = $request->input("name");
+            $image_name = $request->file('image')->getClientOriginalName();
 
-    //         $product_type = new product_type();
-    //         $product_type->name =$name;
-    //         $product_type->image=$image_name;
-    //         $product_type->save();
+            $hang = new manufacture();
+            $hang->name =$name;
+            $hang->image=$image_name;
+            $hang->save();
 
-    //         $image = $request->file('image');
-    //         $image->move(base_path('\storage\images\other_images'), $image_name);
-    //     }
-    //     echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
-    //     return redirect()-> route('viewproType');
-    // }
+            $image = $request->file('image');
+            $image->move(base_path('\storage\images\other_images'), $image_name);
+        }
+        echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        return redirect()-> route('viewhang');
+    }
 
 
    
 
-    // public function edit_pro_type_form(Request $request, $pt_id)
-    // {   
-    //     // $new_name = $request->input('p_cat_title');
-    //     // $new_image = $request->file('p_cat_image')->getClientOriginalName(); 
-    //     // $image = $request->file('image');
-    //     // $image->move(base_path('\storage\images\other_images'), $image_name);
+    public function edit_hang_form(Request $request, $h_id)
+    {   
+        // $new_name = $request->input('p_cat_title');
+        // $new_image = $request->file('p_cat_image')->getClientOriginalName(); 
+        // $image = $request->file('image');
+        // $image->move(base_path('\storage\images\other_images'), $image_name);
 
-    //     // DB::table('product_type')
-    //     //     ->where('id', $pt_id)
-    //     //     ->update(['name' => $new_name,'image' => $new_image ]);
+        // DB::table('product_type')
+        //     ->where('id', $pt_id)
+        //     ->update(['name' => $new_name,'image' => $new_image ]);
 
 
-    //     try { 
-    //         $new_name = $request->input('p_cat_title');
-    //         $new_image = $request->file('p_cat_image')->getClientOriginalName(); 
-    //         $image = $request->file('p_cat_image');
+        try { 
+            $new_name = $request->input('hang_title');
+            $new_image = $request->file('hang_image')->getClientOriginalName(); 
+            $image = $request->file('hang_image');
             
 
-    //         $edit_pt = DB::table('product_type')
-    //             ->where('id', $pt_id)
-    //             ->update(['name' => $new_name,'image' => $new_image ]);
+            $edit_h = DB::table('hang')
+                ->where('id', $h_id)
+                ->update(['name' => $new_name,'image' => $new_image ]);
               
 
-    //             echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+                echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
         
                   
             
 
-    //         } catch(\Illuminate\Database\QueryException $ex){ 
-    //         dd($ex->getMessage()); 
-    //         // Note any method of class PDOException can be called on $ex.
-    //             echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
-    //             return redirect()-> route('admin.producttype.edit_pro_type');
-    //     }
-    //     $image->move(base_path('\storage\images\other_images'), $new_image);
+            } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+            // Note any method of class PDOException can be called on $ex.
+                echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                return redirect()-> route('admin.hang.edit_hang');
+        }
+        $image->move(base_path('\storage\images\other_images'), $new_image);
 
       
-    //     return redirect()-> route('viewproType');
+        return redirect()-> route('viewhang');
 
-    // }
+    }
 
 
-    // public function getTypeInfoById($proTypeId)
-    // {
-    //     // Thong Tin danh mục
-    //     $product_type = DB::table('product_type')
+    public function getTypeInfoById($hangId)
+    {
+        // Thong Tin danh mục
+        $hang = DB::table('hang')
             
-    //         ->select('product_type.*')
-    //         ->where('product_type.id', '=', $proTypeId)
+            ->select('hang.*')
+            ->where('hang.id', '=', $hangId)
          
-    //         ->get();
+            ->get();
        
         
        
-    //     return view(
-    //         'admin.producttype.edit_pro_type',
-    //         [
+        return view(
+            'admin.hang.edit_hang',
+            [
         
-    //             'product_type' => $product_type[0]
+                'hang' => $hang[0]
               
-    //         ]
-    //     );
-    // }
+            ]
+        );
+    }
 
 
 

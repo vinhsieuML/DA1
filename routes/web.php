@@ -120,5 +120,14 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     //--ajax phân trang
     Route::post('/view_hang/fetch_data_hang', 'manage_hangController@fetch_data_hang')->name('paginationhang.fetch');;
 
+    //Thêm hãng
+    Route::get('/insert_hang','manage_hangController@insert_hang');
+    Route::post('/insert_hang','manage_hangController@insert_hang_form');
+
+     //Sửa
+     Route::get('/edit_hang/{hangId}','manage_hangController@getTypeInfoById');
+     Route::post('/edit_hang/{hangId}','manage_hangController@edit_hang_form');
+ 
+ 
 
 }); 
