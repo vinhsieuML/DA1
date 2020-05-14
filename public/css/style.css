@@ -1010,6 +1010,14 @@ body{
 }
 /**/
 
+#center_cell{
+    text-align: center !important;
+}
+
+#table_w{
+    width: 90%;
+}
+
 
 /* styling the label finish */
 

@@ -159,10 +159,10 @@
                 
                 <ul id="cat" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="============"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Size </a>
+                        <a href="{{url('admin/insert_size')}}"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Size </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_size">  <i class="glyphicon glyphicon-th-list"></i>  &nbsp Danh Sách Các Size </a>
+                        <a href="{{url('admin/view_size')}}">  <i class="glyphicon glyphicon-th-list"></i>  &nbsp Danh Sách Các Size </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 

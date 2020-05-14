@@ -76,7 +76,7 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     // Route::get('/login','adminloginController@l');
     Route::get('/dashboard', 'adminloginController@LoadDashBoard')->name('dashBoard');
 
-    //Quản lí product type
+    //Quản lí product type--------------------------------------------------------
     //Xem
     Route::get('/view_p_type','manage_product_typeController@getpro_type')-> name('viewproType');
         //--ajax phân trang
@@ -92,7 +92,7 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
 
 
 
-    //Quản lí product
+    //Quản lí product--------------------------------------------------------
     Route::get('/view_product','manage_productController@getproduct');
         
     Route::post('/view_product/fetch_data_product', 'manage_productController@fetch_data_product')->name('paginationpro.fetch');
@@ -115,7 +115,7 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     Route::post('/edit_product/{proId}','manage_productController@edit_product');
     Route::get('/edit_product/action', 'manage_productController@action_insert')->name('live_search.actionfix');
 
-    //Quản lý hãng
+    //Quản lý hãng--------------------------------------------------------
     Route::get('/view_hang','manage_hangController@get_hang')-> name('viewhang');
     //--ajax phân trang
     Route::post('/view_hang/fetch_data_hang', 'manage_hangController@fetch_data_hang')->name('paginationhang.fetch');;
@@ -124,10 +124,23 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     Route::get('/insert_hang','manage_hangController@insert_hang');
     Route::post('/insert_hang','manage_hangController@insert_hang_form');
 
-     //Sửa
-     Route::get('/edit_hang/{hangId}','manage_hangController@getTypeInfoById');
-     Route::post('/edit_hang/{hangId}','manage_hangController@edit_hang_form');
- 
- 
+    //Sửa
+    Route::get('/edit_hang/{hangId}','manage_hangController@getTypeInfoById');
+    Route::post('/edit_hang/{hangId}','manage_hangController@edit_hang_form');
+
+    
+
+     //Quản lý size--------------------------------------------------------
+    Route::get('/view_size','manage_sizeController@get_size')-> name('viewsize');
+    //--ajax phân trang
+    Route::post('/view_size/fetch_data_size', 'manage_sizeController@fetch_data_size')->name('paginationsize.fetch');;
+
+    //Thêm size
+    Route::get('/insert_size','manage_sizeController@insert_size');
+    Route::post('/insert_size','manage_sizeController@insert_size_form');
+
+    //Sửa
+    Route::get('/edit_size/{sizeId}','manage_sizeController@getTypeInfoById');
+    Route::post('/edit_size/{sizeId}','manage_sizeController@edit_size_form');
 
 }); 
