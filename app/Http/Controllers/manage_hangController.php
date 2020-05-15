@@ -19,7 +19,7 @@ class manage_hangController extends Controller
   
 
 
-    //***Quản lý danh mục
+    //***Quản lý hãng
 
     public function get_hang()
     {

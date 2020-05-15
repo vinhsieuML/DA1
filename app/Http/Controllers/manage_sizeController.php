@@ -19,7 +19,7 @@ class manage_sizeController extends Controller
   
 
 
-    //***Quản lý danh mục
+    //***Quản lý size
 
     public function get_size()
     {

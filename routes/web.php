@@ -130,7 +130,7 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
 
     
 
-     //Quản lý size--------------------------------------------------------
+    //Quản lý size--------------------------------------------------------
     Route::get('/view_size','manage_sizeController@get_size')-> name('viewsize');
     //--ajax phân trang
     Route::post('/view_size/fetch_data_size', 'manage_sizeController@fetch_data_size')->name('paginationsize.fetch');;
@@ -142,5 +142,21 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     //Sửa
     Route::get('/edit_size/{sizeId}','manage_sizeController@getTypeInfoById');
     Route::post('/edit_size/{sizeId}','manage_sizeController@edit_size_form');
+
+    //Quản lý slider--------------------------------------------------------
+    Route::get('/view_slider','manage_sliderController@get_slider')-> name('viewslider');
+
+     //Thêm slider
+     Route::get('/insert_slider','manage_sliderController@insert_slider');
+     Route::post('/insert_slider','manage_sliderController@insert_slider_form');
+
+     //Sửa slider
+    Route::get('/edit_slider/{sliderId}','manage_sliderController@getTypeInfoById');
+    Route::post('/edit_slider/{sliderId}','manage_sliderController@edit_slider_form');
+
+    //Xóa slider
+    Route::get('/delete_slider/{sliderId}','manage_sliderController@delete_slider');
+
+ 
 
 }); 

@@ -178,10 +178,10 @@
                 
                 <ul id="slides" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_slide"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Slide </a>
+                        <a href="{{url('admin/insert_slider')}}"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Slide </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_slides"> <i class="glyphicon glyphicon-th-list"></i> &nbsp Xem Slides </a>
+                        <a href="{{url('admin/view_slider')}}"> <i class="glyphicon glyphicon-th-list"></i> &nbsp Xem Slides </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
