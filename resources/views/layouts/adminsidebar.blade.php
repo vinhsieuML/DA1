@@ -211,7 +211,7 @@
             
             
             <li><!-- li begin -->
-                <a href="index.php?view_customers"><!-- a href begin -->
+                <a href="{{url('admin/view_user')}}"><!-- a href begin -->
                     <i class="fa fa-fw fa-users"></i> Xem Khách Hàng
                 </a><!-- a href finish -->
             </li><!-- li finish -->

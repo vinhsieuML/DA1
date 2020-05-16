@@ -157,6 +157,9 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     //Xóa slider
     Route::get('/delete_slider/{sliderId}','manage_sliderController@delete_slider');
 
- 
+    //User
+    Route::post('/view_user/fetch_data', 'manage_userController@fetch_data');
+    Route::get('/view_user', 'manage_userController@index')->name('viewuser');
+
 
 }); 
