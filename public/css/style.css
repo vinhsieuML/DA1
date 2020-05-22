@@ -1018,6 +1018,11 @@ body{
     width: 90%;
 }
 
+/* thu nhỏ chiều ngang quản lý admin */
+.panel-default
+{
+    width: 90%;
+}
 
 /* styling the label finish */
 

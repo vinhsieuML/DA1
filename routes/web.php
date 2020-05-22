@@ -80,7 +80,7 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     //Xem
     Route::get('/view_p_type','manage_product_typeController@getpro_type')-> name('viewproType');
         //--ajax phân trang
-    Route::post('/view_p_type/fetch_data_product_type', 'manage_product_typeController@fetch_data_product_type')->name('paginationprotype.fetch');;
+    Route::post('/view_p_type/fetch_data_product_type', 'manage_product_typeController@fetch_data_product_type')->name('paginationprotype.fetch');
 
     //Thêm
     Route::get('/insert_p_type','manage_product_typeController@insert_pro_type');
@@ -118,7 +118,7 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     //Quản lý hãng--------------------------------------------------------
     Route::get('/view_hang','manage_hangController@get_hang')-> name('viewhang');
     //--ajax phân trang
-    Route::post('/view_hang/fetch_data_hang', 'manage_hangController@fetch_data_hang')->name('paginationhang.fetch');;
+    Route::post('/view_hang/fetch_data_hang', 'manage_hangController@fetch_data_hang')->name('paginationhang.fetch');
 
     //Thêm hãng
     Route::get('/insert_hang','manage_hangController@insert_hang');
@@ -133,7 +133,7 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     //Quản lý size--------------------------------------------------------
     Route::get('/view_size','manage_sizeController@get_size')-> name('viewsize');
     //--ajax phân trang
-    Route::post('/view_size/fetch_data_size', 'manage_sizeController@fetch_data_size')->name('paginationsize.fetch');;
+    Route::post('/view_size/fetch_data_size', 'manage_sizeController@fetch_data_size')->name('paginationsize.fetch');
 
     //Thêm size
     Route::get('/insert_size','manage_sizeController@insert_size');
@@ -160,6 +160,42 @@ Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
     //User
     Route::post('/view_user/fetch_data', 'manage_userController@fetch_data');
     Route::get('/view_user', 'manage_userController@index')->name('viewuser');
+
+
+
+    //Xem order
+    Route::post('/view_order/fetch_data', 'manage_orderController@fetch_data');
+    Route::get('/view_order', 'manage_orderController@index')->name('vieworder');
+
+    //Xem order detail
+     Route::get('/view_order_detail/{billId}','manage_orderController@getTypeInfoById');
+
+
+    
+    //Quản lý administrator--------------------------------------------------------
+    Route::get('/view_administrator','manage_adminController@get_admin')-> name('viewadmin');
+    //--ajax phân trang
+    Route::post('/view_administrator/fetch_data_admin', 'manage_adminController@fetch_data_admin')->name('paginationadmin.fetch');
+
+     //Thêm hãng
+     Route::get('/insert_administrator','manage_adminController@insert_administrator');
+     Route::post('/insert_administrator','manage_adminController@insert_administrator_form');
+
+    
+    //Quản lý boxes--------------------------------------------------------
+    Route::get('/view_boxes','manage_boxesController@get_boxes')-> name('viewbox');
+
+    //Thêm boxes
+    Route::get('/insert_boxes','manage_boxesController@insert_boxes');
+    Route::post('/insert_boxes','manage_boxesController@insert_boxes_form');
+
+    //Sửa boxes
+   Route::get('/edit_boxes/{boxId}','manage_boxesController@getTypeInfoById');
+   Route::post('/edit_boxes/{boxId}','manage_boxesController@edit_boxes_form');
+
+   //Xóa boxes
+   Route::get('/delete_boxes/{boxId}','manage_boxesController@delete_boxes');
+ 
 
 
 }); 

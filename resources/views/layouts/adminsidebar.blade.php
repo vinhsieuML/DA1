@@ -197,10 +197,10 @@
                 
                 <ul id="boxes" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_box"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Box </a>
+                        <a href="{{url('admin/insert_boxes')}}"><i class="glyphicon glyphicon-plus"></i> &nbsp Thêm Box </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_boxes">  <i class="glyphicon glyphicon-th-list"></i> &nbsp Xem Boxes </a>
+                        <a href="{{url('admin/view_boxes')}}">  <i class="glyphicon glyphicon-th-list"></i> &nbsp Xem Boxes </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
@@ -217,7 +217,7 @@
             </li><!-- li finish -->
             
             <li><!-- li begin -->
-                <a href="index.php?view_orders"><!-- a href begin -->
+                <a href="{{url('admin/view_order')}}"><!-- a href begin -->
                     <i class="fa fa-fw fa-book"></i> Xem Đơn Hàng
                 </a><!-- a href finish -->
             </li><!-- li finish -->
@@ -235,10 +235,10 @@
                 
                 <ul id="users" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_user"> <i class="glyphicon glyphicon-plus"></i>  &nbsp Thêm Admin </a>
+                        <a href="{{url('admin/insert_administrator')}}"> <i class="glyphicon glyphicon-plus"></i>  &nbsp Thêm Admin </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_users">  <i class="glyphicon glyphicon-th-list"></i> &nbsp Xem Admin </a>
+                        <a href="{{url('admin/view_administrator')}}">  <i class="glyphicon glyphicon-th-list"></i> &nbsp Xem Admin </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
