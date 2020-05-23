@@ -12,10 +12,10 @@
                 <hr> -->
               
                 <ul>
-                    <li class="space_line"><a href="cart.php">Giỏ hàng</a></li>
-                    <li class="space_line"><a href="customer/my_account.php?my_orders">Tài khoản</a></li>
-                    <li class="space_line"><a href="shop.php?p_cat=1&page=1">Cửa hàng</a></li>  
-                    <li class="space_line"><a href="contact.php">Liên hệ</a></li>                 
+                    <li class="space_line"><a href="{{url('user/cart')}}">Giỏ hàng</a></li>
+                    <li class="space_line"><a href="{{url('user/orders')}}">Tài khoản</a></li>
+                    <li class="space_line"><a href="{{url('/shop/pCat/1/1')}}">Cửa hàng</a></li>  
+                    <li class="space_line"><a href="{{url('/contact')}}">Liên hệ</a></li>                 
                 </ul>
 
                
