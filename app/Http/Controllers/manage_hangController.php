@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -26,9 +26,9 @@ class manage_hangController extends Controller
         // $product_type = product_type::all()->paginate(3);
         $hang = DB::table('hang')->paginate(2);
 
-       
+        
         return view("admin.hang.view_hang", ["hang"=>$hang]);
-    
+        
     }
 
     //AJAX pagination
@@ -46,7 +46,7 @@ class manage_hangController extends Controller
     public function insert_hang()
     {
         
-        
+       
         return view('admin.hang.insert_hang');
 
     
@@ -72,6 +72,7 @@ class manage_hangController extends Controller
             $image->move(base_path('\storage\images\other_images'), $image_name);
         }
         echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã thêm hãng');
         return redirect()-> route('viewhang');
     }
 
@@ -80,16 +81,7 @@ class manage_hangController extends Controller
 
     public function edit_hang_form(Request $request, $h_id)
     {   
-        // $new_name = $request->input('p_cat_title');
-        // $new_image = $request->file('p_cat_image')->getClientOriginalName(); 
-        // $image = $request->file('image');
-        // $image->move(base_path('\storage\images\other_images'), $image_name);
-
-        // DB::table('product_type')
-        //     ->where('id', $pt_id)
-        //     ->update(['name' => $new_name,'image' => $new_image ]);
-
-
+   
         try { 
             $new_name = $request->input('hang_title');
             $new_image = $request->file('hang_image')->getClientOriginalName(); 
@@ -114,7 +106,7 @@ class manage_hangController extends Controller
         }
         $image->move(base_path('\storage\images\other_images'), $new_image);
 
-      
+        alert()->success('Thành công','Đã cập nhật');
         return redirect()-> route('viewhang');
 
     }

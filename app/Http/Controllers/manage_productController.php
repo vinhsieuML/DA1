@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -90,6 +91,7 @@ class manage_productController extends Controller
             dd($ex->getMessage()); 
             // Note any method of class PDOException can be called on $ex.
                 echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                alert()->success('Thành công','Đã xóa');
                 return back();
 
         }
@@ -116,6 +118,7 @@ class manage_productController extends Controller
             dd($ex->getMessage()); 
             // Note any method of class PDOException can be called on $ex.
                 echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                alert()->success('Thành công','Đã kích hoạt lại');
                 return back();
 
         }
@@ -421,6 +424,7 @@ class manage_productController extends Controller
             // $image->move(base_path('\storage\images\other_images'), $image_name);
         }
         echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã cập nhật');
         return redirect()-> route('viewpro');
 
     }
@@ -514,6 +518,7 @@ class manage_productController extends Controller
             // $image->move(base_path('\storage\images\other_images'), $image_name);
         }
         echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã thêm sản phẩm');
         return redirect()-> route('viewpro');
 
     }

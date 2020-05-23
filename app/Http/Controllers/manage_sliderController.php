@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -77,10 +77,11 @@ class manage_sliderController extends Controller
         }
         else 
         {
-            echo "<script>alert('Không thể thêm quá 4 slide, vui lòng xóa bớt')</script>";
+            
+            alert()->error('Thất bại','Không thể thêm quá 4 slide, vui lòng xóa bớt');
             return back();
         }
-        echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã thêm slide');
         return redirect()-> route('viewslider');
     }
 
@@ -104,11 +105,6 @@ class manage_sliderController extends Controller
                 ]);
               
 
-                echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
-        
-                  
-            
-
             } catch(\Illuminate\Database\QueryException $ex){ 
             dd($ex->getMessage()); 
             // Note any method of class PDOException can be called on $ex.
@@ -117,7 +113,7 @@ class manage_sliderController extends Controller
         }
         $image->move(base_path('\storage\images\slides_images'), $new_image);
 
-      
+        alert()->success('Thành công','Đã cập nhật');
         return redirect()-> route('viewslider');
 
     }
@@ -163,7 +159,7 @@ class manage_sliderController extends Controller
         ->delete();
 
 
-       
+        alert()->success('Thành công','Đã xóa slide');
         return back();
 
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -60,6 +61,7 @@ class manage_sizeController extends Controller
         $product_type = DB::table('product_type')
         ->get();
         
+        
         return view("admin.size.insert_size", [
             "product_type"=>$product_type
         ]);
@@ -85,6 +87,7 @@ class manage_sizeController extends Controller
             
         }
         echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã thêm size');
         return redirect()-> route('viewsize');
     }
 
@@ -118,7 +121,7 @@ class manage_sizeController extends Controller
         }
       
 
-      
+        alert()->success('Thành công','Đã cập nhật');
         return redirect()-> route('viewsize');
 
     }

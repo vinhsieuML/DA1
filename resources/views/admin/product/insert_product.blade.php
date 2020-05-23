@@ -235,24 +235,9 @@
                     
                     </div><!-- form-group finish -->
 
-                        <div class="form-group"><!-- form-group begin -->
+                     
                         
-                            <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
-                            
-                                Hình Ảnh Hiện Tại
-                            
-                            </label><!-- control-label col-md-3 finish --> 
-                            
-                            <div class="col-md-1"><!-- col-md-6 begin -->
-                            
-                               
-                            
-                            </div><!-- col-md-6 finish -->
-                        
-                        </div><!-- form-group finish -->
-
-                        
-                        <div class="form-group"><!-- form-group begin -->
+                        <div class="form-group"><!-- form-group beginn -->
                         
                             <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                             

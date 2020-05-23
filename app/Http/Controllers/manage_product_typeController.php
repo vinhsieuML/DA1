@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -71,6 +72,7 @@ class manage_product_typeController extends Controller
             $image->move(base_path('\storage\images\other_images'), $image_name);
         }
         echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã thêm danh mục');
         return redirect()-> route('viewproType');
     }
 
@@ -113,7 +115,7 @@ class manage_product_typeController extends Controller
         }
         $image->move(base_path('\storage\images\other_images'), $new_image);
 
-      
+        alert()->success('Thành công','Đã cập nhật');
         return redirect()-> route('viewproType');
 
     }

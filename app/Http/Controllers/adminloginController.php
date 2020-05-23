@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+Use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -15,6 +15,7 @@ class adminLoginController extends Controller
 {
     private function getLoginForm()
     {
+        alert()->success('Title','Lorem Lorem Lorem');
         return view('admin.signin');
     }
     private function getRegisterForm()
@@ -49,6 +50,8 @@ class adminLoginController extends Controller
 
     //Load trang giao dien Admin
     public function LoadDashBoard(){
+        
+        alert()->success('Title','Lorem Lorem Lorem');
         return view('admin.dashboard');
     }
 

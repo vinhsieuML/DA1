@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -71,6 +71,7 @@ class manage_boxesController extends Controller
             return back();
         }
         echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã cập nhật');
         return redirect()-> route('viewbox');
     }
 
@@ -106,7 +107,7 @@ class manage_boxesController extends Controller
                 return redirect()-> route('admin.hang.edit_hang');
         }
        
-      
+        alert()->success('Thành công','Đã cập nhật');
         return redirect()-> route('viewbox');
 
     }
@@ -145,7 +146,7 @@ class manage_boxesController extends Controller
         ->delete();
 
 
-       
+        alert()->success('Thành công','Đã xóa boxes');
         return back();
 
     }

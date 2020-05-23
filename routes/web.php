@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Aler;
 
 /*
 |--------------------------------------------------------------------------

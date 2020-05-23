@@ -28,6 +28,7 @@
 </body> -->
 
 <body class="login"> 
+    @include('sweetalert::alert')
     <div class="contact-form">
         <img src= "../../storage/images/other_images/3.jpg" class="avatar">
         <h2>Admin Login</h2>

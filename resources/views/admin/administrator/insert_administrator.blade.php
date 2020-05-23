@@ -64,8 +64,23 @@
                             
                             <div class="col-md-6"><!-- col-md-6 begin -->
                             
-                                <input name="admin_password" type="text" class="form-control" required>
-                            
+                                <input id="typepass" name="admin_password" type="password" class="form-control" required>
+                                <br>
+                                
+                                <input type="checkbox" onclick="Toggle()"> 
+                                <b>Show Password</b> 
+                                <script>
+                                     function Toggle() { 
+                                            var temp = document.getElementById("typepass"); 
+                                            if (temp.type === "password") { 
+                                                temp.type = "text"; 
+                                            } 
+                                            else { 
+                                                temp.type = "password"; 
+                                            } 
+                                        } 
+                                </script>
+                                
                             </div><!-- col-md-6 finish -->
                     
                         </div><!-- form-group finish -->
@@ -82,7 +97,7 @@
                             
                             <div class="col-md-6"><!-- col-md-6 begin -->
                             
-                                <input name="admin_phone" type="text" class="form-control" required>
+                                <input name="admin_phone" type="number" min="0" class="form-control" oninput="validity.valid||(value='');" required>
                             
                             </div><!-- col-md-6 finish -->
                 

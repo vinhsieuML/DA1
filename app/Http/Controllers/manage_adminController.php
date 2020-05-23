@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\admin;
 use App\product_type;
 use App\product;
@@ -82,6 +82,7 @@ class manage_adminController extends Controller
             $image->move(base_path('\storage\images\admin_images'), $image_name);
         }
         echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+        alert()->success('Thành công','Đã thêm admin');
         return redirect()-> route('viewadmin');
     }
 
