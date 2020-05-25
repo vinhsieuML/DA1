@@ -68,14 +68,15 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 //Admin (dung prefix: admin)
-Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
+Route::group(['middleware'=>['web','checkadmin'],'prefix'=>'admin'],function(){
     //Login(Không Cần Middleware check Auth)
     Route::get('/login','adminloginController@login')->name('homePageAdmin');
     Route::post('/login','adminloginController@handleForm');
-
+    Route::get('/logout', 'adminloginController@logout');
     
     // Route::get('/login','adminloginController@l');
     Route::get('/dashboard', 'adminloginController@LoadDashBoard')->name('dashBoard');
+    
 
     //Quản lí product type--------------------------------------------------------
     //Xem

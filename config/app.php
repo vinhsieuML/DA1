@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
       
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
         /*

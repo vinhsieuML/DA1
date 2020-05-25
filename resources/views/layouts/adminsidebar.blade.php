@@ -11,7 +11,7 @@
             
         </button><!-- navbar-toggle finish -->
         
-        <a href="index.php?dashboard" class="navbar-brand">Admin Area</a>
+        <a href="{{url('admin/dashboard')}}" class="navbar-brand">Admin Area</a>
         
     </div><!-- navbar-header finish -->
     
@@ -26,16 +26,17 @@
             </a><!-- dropdown-toggle finish -->
             
             <ul class="dropdown-menu"><!-- dropdown-menu begin -->
-                <li><!-- li begin -->
-                    <a href="index.php?user_profile="><!-- a href begin -->
+                <!-- ranh thi lam ****-->
+                <!-- <li>
+                    <a href="index.php?user_profile=">
                         
                         <i class="fa fa-fw fa-user"></i> Profile
                         
-                    </a><!-- a href finish -->
-                </li><!-- li finish -->
+                    </a>
+                </li> -->
                 
                 <li><!-- li begin -->
-                    <a href="index.php?view_products"><!-- a href begin -->
+                    <a href="{{url('admin/view_products')}}"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-envelope"></i> Products
                         
@@ -45,7 +46,7 @@
                 </li><!-- li finish -->
                 
                 <li><!-- li begin -->
-                    <a href="index.php?view_customers"><!-- a href begin -->
+                    <a href="{{url('admin/view_user')}}"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-users"></i> Customeres
                         
@@ -55,7 +56,7 @@
                 </li><!-- li finish -->
                 
                 <li><!-- li begin -->
-                    <a href="index.php?view_cats"><!-- a href begin -->
+                    <a href="{{url('admin/view_p_type')}}"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-gear"></i> Product Categories
                         
@@ -67,7 +68,7 @@
                 <li class="divider"></li>
                 
                 <li><!-- li begin -->
-                    <a href="logout.php"><!-- a href begin -->
+                    <a href="{{url('admin/logout')}}"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-power-off"></i> Đăng Xuất
                         

@@ -1036,3 +1036,138 @@ body{
 .img-responsive{
     height: fill;
 }
+
+
+/*TEST*/
+/*  Custom Color For Panel  */
+
+.huge{
+    font-size: 40px !important;
+    line-height: normal !important;
+}
+
+.panel-green{
+    border-color: #5cd85c !important;
+}
+
+.panel-green>.panel-heading{
+    color: #ffffff !important;
+    background-color: #5cd85c !important;
+}
+
+.panel-green>a{
+    color: #5cd85c !important;
+}
+
+.panel-green>a:hover{
+    color: #3d8c3d !important;
+}
+
+.panel-orange{
+    border-color: #f0ad4e !important;
+}
+
+.panel-orange>.panel-heading{
+    color: #ffffff;
+    background-color: #f0ad4e !important;
+}
+
+.panel-orange>a{
+    color: #f0ad4e !important;
+}
+
+.panel-orange>a:hover{
+    color: #ba8539 !important;
+}
+
+.panel-red{
+    border-color: #d9534f !important;
+}
+
+.panel-red>.panel-heading{
+    color: #ffffff !important;
+    background-color: #d9534f !important;
+}
+
+.panel-red>a{
+    color: #d9534f !important;
+}
+
+.panel-red>a:hover{
+    color: #8d4341 !important;
+}
+
+/*  Admin Profile Styling  */
+
+.panel-body{
+    border-radius: 5px !important;
+}
+
+.thumb-info{
+   
+}
+
+.rounded{
+    border-radius: 10px !important;
+    float: left;
+}
+
+hr{
+    border: 0 !important;
+    height: 1px !important;
+    margin: 10px 0 10px 0 !important;
+}
+
+hr.dotted{
+    border-bottom: 1px #dddddd dotted !important;
+    height: 0px !important;
+    margin: 10px 0 10px 0 !important;
+}
+
+.thumb-info .thumb-info-title{
+    background: rgba(36,27,28,.9) !important;
+    bottom: 10% !important;
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    left: 0 !important;
+    letter-spacing: -1px !important;
+    padding: 9px 11px 9px !important;
+    position: absolute !important;
+    text-transform: uppercase !important;
+    z-index: 1 !important;
+    margin-left: 40px;
+    margin-bottom: 10px;    
+}
+
+.thumb-info .thumb-info-inner{
+    display: block !important;
+}
+
+.thumb-info .thumb-info-type{
+    background: #0088cc !important;
+    display: inline-block !important;
+    border-radius: 2px !important;
+    float: left !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    margin: 8px -2px -15px -2px !important;
+    padding: 2px 9px !important;
+    text-transform: none !important;
+}
+
+.widget-content-expanded{
+    font-size: 15px !important;
+}
+
+.widget-content-expanded span{
+    font-weight: 600 !important;
+}
+
+.widget-content-expanded i{
+    color: #0088cc !important;
+    margin-right: 5px !important;
+}
+
+

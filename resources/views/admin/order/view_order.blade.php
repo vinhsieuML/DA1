@@ -144,7 +144,32 @@ $(document).ready(function(){
  });
 
 
-
+ $('a[name ="verify"]').click(function() {
+                var id_order = $(this).data("order_id");
+                $('#GHN'+id_order).html("<div class='loader'></div>");
+                $.ajax({
+                    "url": "{{Config::get('serverConfig.localIp') . '/api/getGHN'}}",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    "data": {
+                        "billID": id_order,
+                        "isCod": "0"
+                    },
+                    success: function(response) {
+                        if(response !== 'THAT_BAI'){
+                            $('#GHN'+id_order).html(response);
+                            $('#status'+id_order).html('Đang Giao Hàng');
+                            $('#action'+id_order).html('Không có hành động');
+                        }
+                        else{
+                            $('#GHN'+id_order).html('Lỗi đường truyền, vui lòng thực hiện lại');
+                        }
+                    }
+                });
+            });
 
 
 });
