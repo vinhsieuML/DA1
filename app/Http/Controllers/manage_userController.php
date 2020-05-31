@@ -44,4 +44,60 @@ class manage_userController extends Controller
             return view('admin.user.pagination_data', compact('data'))->render();
         }
     }
+
+
+    public function deactivate(Request $request, $u_id)
+    {
+        try { 
+
+            $edit_pt = DB::table('users')
+                ->where('id', $u_id)
+                ->update(['status' => '0' ]);
+              
+
+                alert()->success('Thành công','Đã cập nhật');
+        
+                  
+            
+
+            } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+            // Note any method of class PDOException can be called on $ex.
+                echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                alert()->success('Thành công','Đã xóa');
+                return back();
+
+        }
+        return back();
+    }
+
+
+    
+    public function activate(Request $request, $u_id)
+    {
+        try { 
+
+            $edit_pt = DB::table('users')
+                ->where('id', $u_id)
+                ->update(['status' => '1' ]);
+              
+
+                alert()->success('Thành công','Đã cập nhật');
+        
+                  
+            
+
+            } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+            // Note any method of class PDOException can be called on $ex.
+                echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                alert()->success('Thành công','Đã kích hoạt lại');
+                return back();
+
+        }
+        return back();
+    }
+
+
+
 }

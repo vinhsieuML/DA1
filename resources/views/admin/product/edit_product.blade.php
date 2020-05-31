@@ -277,11 +277,20 @@
                             
                             </label><!-- control-label col-md-3 finish --> 
                             
-                            <div class="col-md-1"><!-- col-md-6 begin -->
-                            
+                          
+                            <?php 
+                            foreach ($images as $key) {
+                                $img = $key->link;
+                             ?>
+                                  <div class="col-md-1"><!-- col-md-6 begin -->
+                                <img width="85" height="85" src='{{url('images/product_images/'. $img)}}' alt="">
+                                </div><!-- col-md-6 finish -->
+                            <?php
+                            }
+                            ?>
                                
                             
-                            </div><!-- col-md-6 finish -->
+                            
                         
                         </div><!-- form-group finish -->
 

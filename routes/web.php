@@ -159,15 +159,19 @@ Route::group(['middleware'=>['web','checkadmin'],'prefix'=>'admin'],function(){
     //Xóa slider
     Route::get('/delete_slider/{sliderId}','manage_sliderController@delete_slider');
 
-    //User
+    //Quản lý User
     Route::post('/view_user/fetch_data', 'manage_userController@fetch_data');
     Route::get('/view_user', 'manage_userController@index')->name('viewuser');
+
+    Route::get('/u/deactive/{userId}','manage_userController@deactivate');
+    Route::get('/u/active/{userId}','manage_userController@activate');
 
 
 
     //Xem order
     Route::post('/view_order/fetch_data', 'manage_orderController@fetch_data');
     Route::get('/view_order', 'manage_orderController@index')->name('vieworder');
+    Route::get('/o/deactive/{orderId}','manage_orderController@deactivate');
 
     //Xem order detail
      Route::get('/view_order_detail/{billId}','manage_orderController@getTypeInfoById');

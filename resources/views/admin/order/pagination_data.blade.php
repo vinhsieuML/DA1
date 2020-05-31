@@ -74,11 +74,12 @@ foreach ($data as $row) {
         </td>
         <td id="action<?php echo $order_id; ?>">
             <?php
+            $link_deactive = url('admin/o/deactive/'.$order_id);
             switch ($order_status) {
                 case 0:
                 case 1:
                     echo '
-                    <a href="index.php?delete_order=' . $order_id . ' ?>">
+                    <a href="' . $link_deactive . '>">
                         <i class="fa fa-trash-o"></i> Huỷ đơn hàng
                     </a>
                     <a style="marginLeft: 10px" id="verify" name ="verify" data-order_id=' . $order_id . '>

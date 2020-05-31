@@ -37,12 +37,13 @@
             <thead><!-- thead begin -->
             <tr><!-- tr begin -->
             <th width="5%" class="sorting" data-sorting_type="asc" data-column_name="id" style="cursor: pointer">ID <span id="id_icon"></span></th>
-            <th width="35%"  data-column_name="post_title" style="cursor: pointer">Tên khách hàng <span id="post_title_icon"></span></th>
+            <th width="20%"  data-column_name="post_title" style="cursor: pointer">Tên khách hàng <span id="post_title_icon"></span></th>
             <th width="15%">Email</th>
-            <th width="15%">Địa chỉ</th>
+            <th width="30%">Địa chỉ</th>
             <th width="10%"> Điện thoại </th>
-            <th width="20%"> Thao tác</th>
-
+            <th width="10%"> Trạng thái</th>
+            <th width="10%"> Thao tác</th>
+            
                
             </tr><!-- tr finish -->
             </thead><!-- thead finish -->

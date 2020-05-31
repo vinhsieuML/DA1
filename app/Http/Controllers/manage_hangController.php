@@ -82,22 +82,24 @@ class manage_hangController extends Controller
     public function edit_hang_form(Request $request, $h_id)
     {   
    
-        try { 
+        try {
+            
             $new_name = $request->input('hang_title');
-            $new_image = $request->file('hang_image')->getClientOriginalName(); 
-            $image = $request->file('hang_image');
-            
-
-            $edit_h = DB::table('hang')
-                ->where('id', $h_id)
-                ->update(['name' => $new_name,'image' => $new_image ]);
-              
-
-                echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
-        
-                  
-            
-
+            if($request->filled("hang_image")){
+                $new_image = $request->file('hang_image')->getClientOriginalName(); 
+                
+                $image =$request->file('hang_image');
+    
+                $edit_h = DB::table('hang')
+                    ->where('id', $h_id)
+                    ->update(['name' => $new_name,'image' => $new_image ]);
+            }
+            else{
+                $edit_h = DB::table('hang')
+                    ->where('id', $h_id)
+                    ->update(['name' => $new_name]);
+            }
+            echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
             } catch(\Illuminate\Database\QueryException $ex){ 
             dd($ex->getMessage()); 
             // Note any method of class PDOException can be called on $ex.

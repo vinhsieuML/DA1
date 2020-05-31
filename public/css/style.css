@@ -1170,4 +1170,9 @@ hr.dotted{
     margin-right: 5px !important;
 }
 
+/* preview hinh product trong edit product*/
+#preview{
+    float: left;
+}
+
 

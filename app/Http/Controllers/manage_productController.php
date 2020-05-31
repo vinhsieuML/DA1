@@ -180,6 +180,12 @@ class manage_productController extends Controller
         ->get();
 
         
+        $images = DB::table('images')            
+        ->select('images.*')
+        ->where('images.id_product', '=', $proId)
+        ->get();
+
+        
 
         // $new_image[] = $request->file('p_cat_image')->getClientOriginalName(); 
         
@@ -190,7 +196,8 @@ class manage_productController extends Controller
                 'product' => $product [0], 
                 'hang' => $hang,
                 'product_type' => $product_type,
-                'size_detail' => $size_detail 
+                'size_detail' => $size_detail,
+                'images' => $images 
             ]
         );
     }

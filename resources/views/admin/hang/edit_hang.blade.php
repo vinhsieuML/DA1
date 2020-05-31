@@ -18,7 +18,7 @@
                 <div class="panel-heading"><!-- panel-heading begin -->
                     <h3 class="panel-title" style="padding:10px"><!-- panel-title begin -->
                         
-                        <font style="font-size:20px" ><b> <i class="fa fa-tags fa-fw"></i> CHỈNH SỬA DANH MỤC </b> </font>
+                        <font style="font-size:20px" ><b> <i class="fa fa-tags fa-fw"></i> CHỈNH SỬA HÃNG </b> </font>
                         
                     </h3><!-- panel-title finish -->
                 </div><!-- panel-heading finish -->

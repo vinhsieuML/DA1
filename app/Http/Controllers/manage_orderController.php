@@ -97,7 +97,30 @@ class manage_orderController extends Controller
         );
     }
 
+    public function deactivate(Request $request, $o_id)
+    {
+        try { 
 
+            $edit_pt = DB::table('bill')
+                ->where('id', $o_id)
+                ->update(['status' => 5 ]);
+              
+
+                alert()->success('Thành công','Đã hủy đơn hàng');
+        
+                  
+            
+
+            } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+            // Note any method of class PDOException can be called on $ex.
+                echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                alert()->success('Thành công','Đã hủy');
+                return back();
+
+        }
+        return back();
+    }
 
 
 
