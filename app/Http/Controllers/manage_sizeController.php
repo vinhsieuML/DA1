@@ -151,7 +151,57 @@ class manage_sizeController extends Controller
 
 
 
+    public function deactivate(Request $request, $s_id)
+    {
+        try { 
+
+            $edit_pt = DB::table('size')
+                ->where('id', $s_id)
+                ->update(['status' => '0' ]);
+              
+
+                alert()->success('Thành công','Đã cập nhật');
+        
+                  
+            
+
+            } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+            // Note any method of class PDOException can be called on $ex.
+                echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                alert()->success('Thành công','Đã xóa');
+                return back();
+
+        }
+        return back();
+    }
+
+
     
+    public function activate(Request $request, $s_id)
+    {
+        try { 
+
+            $edit_pt = DB::table('size')
+                ->where('id', $s_id)
+                ->update(['status' => '1' ]);
+              
+
+                alert()->success('Thành công','Đã cập nhật');
+        
+                  
+            
+
+            } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+            // Note any method of class PDOException can be called on $ex.
+                echo "<script>alert('Có lỗi xảy ra! Vui lòng thử lại')</script>";
+                alert()->success('Thành công','Đã kích hoạt lại');
+                return back();
+
+        }
+        return back();
+    }
 
 
   

@@ -10,7 +10,7 @@
                         $u_phone=$row->phone;
                         $u_email =$row->email;
                         $u_add= $row->address;
-                        $u_stt = $row->status
+                        $u_stt = $row->status;
                    
 
                     ?>

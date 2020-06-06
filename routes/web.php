@@ -141,6 +141,9 @@ Route::group(['middleware'=>['web','checkadmin'],'prefix'=>'admin'],function(){
     Route::get('/insert_size','manage_sizeController@insert_size');
     Route::post('/insert_size','manage_sizeController@insert_size_form');
 
+    Route::get('/s/deactive/{sizeId}','manage_sizeController@deactivate');
+    Route::get('/s/active/{sizeId}','manage_sizeController@activate');
+
     //Sửa
     Route::get('/edit_size/{sizeId}','manage_sizeController@getTypeInfoById');
     Route::post('/edit_size/{sizeId}','manage_sizeController@edit_size_form');

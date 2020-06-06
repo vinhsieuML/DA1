@@ -1012,6 +1012,7 @@ body{
 
 #center_cell{
     text-align: center !important;
+    vertical-align: inherit !important;
 }
 
 #table_w{
