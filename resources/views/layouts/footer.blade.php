@@ -40,21 +40,18 @@
                     $product_types= App\product_type::all();
                     foreach ($product_types as $product_type ) {
                         $p_cat_id = $product_type->id;
-                        
                         $p_cat_title = $product_type->name;
+                ?>       
                         
-                        echo "
+                        
                             <li class='space_line'>
                             
-                                <a href='shop.php?p_cat=$p_cat_id&page=1'>
-                                
-                                    $p_cat_title
-                                
+                                <a href='{{url('/shop/pCat/' . $p_cat_id .'/1')}}'>
+                                     {{$p_cat_title}}
                                 </a>
                             
                             </li>
-                        
-                        ";
+                <?php
                     }
                 
                 ?>

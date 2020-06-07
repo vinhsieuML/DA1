@@ -8,5 +8,5 @@ class images extends Model
 {
     //
     protected $table= 'images';
-    public $timestamp = false;
+    public $timestamps = false;
 }

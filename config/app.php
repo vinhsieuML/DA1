@@ -160,6 +160,9 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
+      
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
         /*
@@ -189,7 +192,7 @@ return [
     */
 
     'aliases' => [
-
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
