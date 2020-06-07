@@ -197,7 +197,11 @@
                                 Thanh Toán Online <i class="fa fa-chevron-right"></i>
 
                             </a>
+                            <a id="ONLINEMOMO" class="btn btn-primary">
 
+                                Thanh Toán MoMo <i class="fa fa-chevron-right"></i>
+
+                            </a>
                         </div><!-- pull-right Finish -->
 
                     </div><!-- box-footer Finish -->
@@ -488,6 +492,23 @@ $customer_ward_id = $userInfo->wardID;
                 data: {
                     "_token": "{{ csrf_token() }}",
                     type: 2 // 1 la cod, 2 la online
+                },
+                success: function(response) {
+                    if (parseInt(response) === 1) {
+                        alert('Giỏ hàng rỗng');
+                    } else {
+                        window.open(response, '_self');
+                    }
+                }
+            });
+        });
+        $("#ONLINEMOMO").click(function() {
+            $.ajax({
+                url: "{{url('user/cart/pay')}}",
+                method: "POST",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    type: 3 // 1 la cod, 2 la online,3 la momo
                 },
                 success: function(response) {
                     if (parseInt(response) === 1) {

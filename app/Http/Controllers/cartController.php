@@ -157,8 +157,36 @@ class cartController extends Controller
                 }
 
                 //close connection
-            } else {
+            } 
+            if($request->type == 2) {
                 $url =  Config::get('serverConfig.localIp') . '/api/cartOnline';
+
+                $fields = array(
+                    'token' => $token,
+                    'arrayDetail' => $arrayDetail,
+                );
+
+                //url-ify the data for the POST
+                $fields_string = http_build_query($fields);
+
+                //open connection
+                $ch = curl_init();
+
+                //set the url, number of POST vars, POST data
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                //execute post
+                $result = curl_exec($ch);
+                curl_close($ch);
+
+                echo $result;
+            }
+
+            if($request->type == 3) {
+                $url =  Config::get('serverConfig.localIp') . '/api/momo';
 
                 $fields = array(
                     'token' => $token,
@@ -185,4 +213,6 @@ class cartController extends Controller
             }
         }
     }
+
+    
 }

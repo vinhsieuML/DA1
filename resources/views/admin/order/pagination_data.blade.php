@@ -79,10 +79,10 @@ foreach ($data as $row) {
                 case 0:
                 case 1:
                     echo '
-                    <a href="' . $link_deactive . '>">
+                    <a href="" id="delete" name="delete" data-order_id=' . $order_id . '>
                         <i class="fa fa-trash-o"></i> Huỷ đơn hàng
                     </a>
-                    <a style="marginLeft: 10px" id="verify" name ="verify" data-order_id=' . $order_id . '>
+                    <a href ="" style="marginLeft: 10px" id="verify" name ="verify" data-order_id=' . $order_id . '>
                         <i class="fa fa-check"></i> Xác Thực
                     </a>
                     ';

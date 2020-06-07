@@ -35,7 +35,6 @@
                     <h1> Không có sản phẩm nào </h1>
                 </div>
             <?php
-                exit();
             } else {
                 $total_pages = ceil($total / 6);
             ?>
