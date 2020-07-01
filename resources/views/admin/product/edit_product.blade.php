@@ -283,7 +283,7 @@
                                 $img = $key->link;
                              ?>
                                   <div class="col-md-1"><!-- col-md-6 begin -->
-                                <img width="85" height="85" src='{{url('images/product_images/'. $img)}}' alt="">
+                                <img width="85" height="85" src='{{url('images/product_images/'. $img)}}' alt="{{$img}}">
                                 </div><!-- col-md-6 finish -->
                             <?php
                             }

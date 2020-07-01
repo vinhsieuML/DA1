@@ -25,7 +25,7 @@
                                                                 <tr><!-- tr begin -->
                                                                         <td> {{$hang_id}} </td>
                                                                         <td> {{$hang_name}}  </td>
-                                                                        <td>  <img width="65" height="65" src='{{url('images/other_images/'. $hang_image)}}' alt="">  </td>
+                                                                        <td>  <img width="65" height="65" src='{{url('images/other_images/'. $hang_image)}}' alt="{{$hang_name}}">  </td>
                                                                         <!-- <td width="300">  </td> -->
                                                                         <td> 
                                                                         <!-- <a href="{{url('admin/edit_p_type')}}"> -->

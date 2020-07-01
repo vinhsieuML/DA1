@@ -78,7 +78,7 @@
 
                                     <div class='product eff'>
                                         <a href='{{url('productDetail/'.$pro_id)}}'>
-                                            <img class='img-responsive' src='{{url('images/product_images/' . $pro_link)}}'>
+                                            <img class='img-responsive' src='{{url('images/product_images/' . $pro_link)}}' alt="{{$pro_link}}">
                                         </a>
 
                                         <div class='text'>

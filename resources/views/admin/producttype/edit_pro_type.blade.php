@@ -80,7 +80,7 @@
                             
                             <div class="col-md-1"><!-- col-md-6 begin -->
                             
-                                <img width="140" height="140" src='{{url('images/other_images/'. $product_type_image)}}' alt="">
+                                <img width="140" height="140" src='{{url('images/other_images/'. $product_type_image)}}' alt="{{$product_type_image}}">
                             
                             </div><!-- col-md-6 finish -->
                         

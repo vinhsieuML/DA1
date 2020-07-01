@@ -30,7 +30,7 @@
 <body class="login"> 
     @include('sweetalert::alert')
     <div class="contact-form">
-        <img src= "../../storage/images/other_images/3.jpg" class="avatar">
+        <img src= "../../storage/images/other_images/3.jpg" class="avatar" alt="avatar">
         <h2>Admin Login</h2>
         <form method="post" action="{{url('admin/login')}}">
             {{ csrf_field() }}

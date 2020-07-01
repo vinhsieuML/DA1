@@ -33,7 +33,7 @@
                                                                 <tr><!-- tr begin -->
                                                                         <td> {{$i}} </td>
                                                                         <td> {{$admin_name}}  </td>
-                                                                        <td>  <img width="65" height="65" src='{{url('images/admin_images/'. $admin_image)}}' alt="">  </td>
+                                                                        <td>  <img width="65" height="65" src='{{url('images/admin_images/'. $admin_image)}}' alt="{{$admin_name}}">  </td>
                                                                         <td>{{$admin_username}}</td>
                                                                         <td>{{$admin_phone}}</td>
                                                                        

@@ -44,7 +44,7 @@
                         
                         <div class="panel-body"><!-- panel-body begin -->
                             
-                            <img src='{{url('images/slides_images/'. $slide_image)}}' alt="" class="img-responsive">
+                            <img src='{{url('images/slides_images/'. $slide_image)}}' alt="{{$slide_image}}" class="img-responsive">
                             
                         </div><!-- panel-body finish -->
                         

@@ -61,8 +61,8 @@
                             <div class="item">';
                     }?>
 
-                            <a href='$url' target='_self'>
-                                <img src='{{url('images/slides_images/'. $slide_image)}}' href = '$url'>
+                            <a href="{{url($url)}}" target='_self'>
+                                <img src='{{url('images/slides_images/'. $slide_image)}}' href = '$url' alt="{{$slide_image}}">
                             </a>
                             </div>
                         <?php
@@ -193,7 +193,7 @@
                 
                     <a href='{{url('productDetail/'.$pro_id)}}'>
                     
-                        <img class='img-responsive' src='{{url('images/product_images/' . $pro_link)}}'>
+                        <img class='img-responsive' src='{{url('images/product_images/' . $pro_link)}}' alt="{{$pro_link}}">
                     
                     </a>
                     

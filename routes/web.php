@@ -75,6 +75,9 @@ Route::group(['middleware' => ['web']], function () {
 //Admin (dung prefix: admin)
 Route::group(['middleware'=>['web','checkadmin'],'prefix'=>'admin'],function(){
     //Login(Không Cần Middleware check Auth)
+    Route::get('/', function () {
+        redirect()->route('homePageAdmin');
+    });
     Route::get('/login','adminloginController@login')->name('homePageAdmin');
     Route::post('/login','adminloginController@handleForm');
     Route::get('/logout', 'adminloginController@logout');

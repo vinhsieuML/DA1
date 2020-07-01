@@ -34,9 +34,7 @@
 
                 <ul class="menu">
                     <!-- cmenu Begin -->
-                    <li>
-                        <a href="{{url('user/orders')}}">Tài khoản của tôi</a>
-                    </li>
+                    
                     <!-- <li>
                        <a href="cart.php">Go To Cart</a>
                    </li> -->
@@ -54,8 +52,12 @@
                     </li>";
 
                 <?php } else { ?>
-
+                    <li>
+                        <a href="{{url('user/orders')}}">Tài khoản của tôi</a>
+                    </li>
+                    <li>
                     <a href='{{url('logout')}}'> Đăng xuất </a>
+                    </li>
 
                 <?php  } ?>
 

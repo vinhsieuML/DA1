@@ -27,7 +27,7 @@
             <div class="box">
                 <!-- box Begin -->
 
-            <form action="{{url('user/cart')}}" method="post" enctype="multipart/form-data">
+                <form action="{{url('user/cart')}}" method="post" enctype="multipart/form-data">
                     <!-- form Begin -->
                     {{ csrf_field() }}
                     <h1>Giỏ hàng</h1>
@@ -186,22 +186,30 @@
 
                             </button><!-- btn btn-default Finish -->
 
-                            <a id="COD" class="btn btn-primary">
+                            <a id="pay" class="btn btn-primary" href="">Thanh Toán</a>
 
-                                Thanh Toán <i class="fa fa-chevron-right"></i>
+                            <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <a id="COD" class="btn btn-primary" style="width: 20% ,white-space: nowrap">
 
-                            </a>
+                                    Thanh Toán COD <i class="fa fa-chevron-right"></i>
 
-                            <a id="ONLINE" class="btn btn-primary">
+                                </a>
+                                <a id="ONLINE" class="btn btn-primary" style="width: 20%,white-space: nowrap">
 
-                                Thanh Toán Online <i class="fa fa-chevron-right"></i>
+                                    Thanh Toán Thẻ Ngân Hàng <i class="fa fa-chevron-right" ></i>
 
-                            </a>
-                            <a id="ONLINEMOMO" class="btn btn-primary">
+                                </a>
+                                <a id="ONLINEMOMO" class="btn btn-primary" style="width: 20%,white-space: nowrap">
 
-                                Thanh Toán MoMo <i class="fa fa-chevron-right"></i>
+                                    Thanh Toán MoMo <i class="fa fa-chevron-right"></i>
 
-                            </a>
+                                </a>
+                            </div>
+                        </div>
+
+
                         </div><!-- pull-right Finish -->
 
                     </div><!-- box-footer Finish -->
@@ -242,7 +250,7 @@
 
                             <a href='{{url('productDetail/'. $pro_id)}}'>
 
-                                <img class='img-responsive' src='{{url('images/product_images/'.$pro_link)}}'>
+                                <img class='img-responsive' src='{{url('images/product_images/'.$pro_link)}}' alt="{{$pro_link}}">
 
                             </a>
 
@@ -251,34 +259,34 @@
                                 <h3 class='pad_h'>
 
                                     <a href='{{url('productDetail/'. $pro_id)}}'>
-        
-                                    {{$pro_title}}
-        
-                                </a>
-                            
-                            </h3>
-                            
-                            <p class=' price'>
 
-                                        {{$pro_price_f}} VNĐ
+                                        {{$pro_title}}
 
-                                        </p>
+                                    </a>
 
-                                        <p class='button'>
+                                </h3>
 
-                                            <a class='btn btn-default' href='{{url('productDetail/'. $pro_id)}}'>
+                                <p class=' price'>
 
-                                                Chi tiết
+                                    {{$pro_price_f}} VNĐ
 
-                                            </a>
+                                </p>
 
-                                            <a class=' btn btn-primary' href='{{url('productDetail/'. $pro_id)}}'>
+                                <p class='button'>
 
-                                                <i class='fa fa-shopping-cart'></i> Thêm vào giỏ
+                                    <a class='btn btn-default' href='{{url('productDetail/'. $pro_id)}}'>
 
-                                            </a>
+                                        Chi tiết
 
-                                        </p>
+                                    </a>
+
+                                    <a class=' btn btn-primary' href='{{url('productDetail/'. $pro_id)}}'>
+
+                                        <i class='fa fa-shopping-cart'></i> Thêm vào giỏ
+
+                                    </a>
+
+                                </p>
 
                             </div>
 
@@ -419,6 +427,55 @@ $customer_ward_id = $userInfo->wardID;
             transform: rotate(360deg);
         }
     }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        text-align: center;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
 <script>
@@ -464,7 +521,38 @@ $customer_ward_id = $userInfo->wardID;
         }, 1000));
     });
 </script>
+{{--Modal--}}
+<script>
+    $(document).ready(function() {
+        // Get the modal
+        var modal = $('#myModal');
 
+        // Get the button that opens the modal
+        var btn = $("#pay");
+
+        // Get the <span> element that closes the modal
+        var span = $(".close");
+
+        // When the user clicks the button, open the modal 
+        btn.on("click",function(e){
+            e.preventDefault();
+            modal.css("display","block");
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        span.on("click",function(e){
+            e.preventDefault();
+            modal.css("display","none");
+        });
+
+        // When the user clicks anywhere outside of the modal, close it
+        $(document).on("click",function(event){
+            if (event.target == modal[0]) {
+                modal.css("display","none");
+            }
+        });
+    });
+</script>
 {{-- Thanh Toan --}}
 <script>
     $(document).ready(function() {

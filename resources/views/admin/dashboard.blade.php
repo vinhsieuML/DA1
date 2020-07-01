@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="{{asset('font-awsome/css/font-awesome.min.css')}}">
             <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-            
+            <script src="{{asset('js/Chart.min.js')}}"></script>
               
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

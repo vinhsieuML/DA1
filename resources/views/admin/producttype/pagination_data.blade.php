@@ -25,7 +25,7 @@
                                                                 <tr><!-- tr begin -->
                                                                         <td> {{$p_type_id}} </td>
                                                                         <td> {{$p_type_name}}  </td>
-                                                                        <td>  <img width="65" height="65" src='{{url('images/other_images/'. $p_type_image)}}' alt="">  </td>
+                                                                        <td>  <img width="65" height="65" src='{{url('images/other_images/'. $p_type_image)}}' alt="{{$p_type_image}}">  </td>
                                                                         <!-- <td width="300">  </td> -->
                                                                         <td> 
                                                                         <!-- <a href="{{url('admin/edit_p_type')}}"> -->

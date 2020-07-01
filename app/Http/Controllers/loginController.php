@@ -81,7 +81,6 @@ class loginController extends Controller
         $response = curl_exec($curl);
 
         curl_close($curl);
-
         // Kiem tra phan hoi
         if (isset(json_decode($response, true)['token'])) {
             session(['token' => json_decode($response, true)['token']]);

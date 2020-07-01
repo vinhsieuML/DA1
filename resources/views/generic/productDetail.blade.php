@@ -171,7 +171,7 @@ $p_cat_title = $product_type->name;
                         <?php foreach (preg_split("/\,/", $pro_link) as $key => $value) { ?>
                             <div class='col-xs-4'>
                                 <a data-target='#myCarousel' data-slide-to='<?php echo"$key" ?>' href='' class='thumbs'>
-                                    <img src='{{url('images/product_images/'.$value)}}' alt='' class='img-responsive'>
+                                    <img src='{{url('images/product_images/'.$value)}}' alt="{{$value}}" class='img-responsive'>
                                 </a>
                             </div>
                         <?php } ?>
@@ -233,7 +233,7 @@ $p_cat_title = $product_type->name;
                         
                         <a href='{{url("productDetail/$pro_id")}}'>
                             
-                                <img class='img-responsive' src='{{url('images/product_images/'.$pro_link)}}'>
+                                <img class='img-responsive' src='{{url('images/product_images/'.$pro_link)}}' alt="{{$pro_link}}">
                             
                             </a>
                             

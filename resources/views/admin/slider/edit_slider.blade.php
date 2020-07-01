@@ -96,7 +96,7 @@
                             
                             <div class="col-md-1"><!-- col-md-6 begin -->
                             
-                                <img width="300" height="120" src='{{url('images/slides_images/'. $slide_image)}}' alt="">
+                                <img width="300" height="120" src='{{url('images/slides_images/'. $slide_image)}}' alt="{{$slide_image}}">
                             
                             </div><!-- col-md-6 finish -->
                         

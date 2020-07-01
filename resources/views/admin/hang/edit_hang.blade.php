@@ -79,7 +79,7 @@
                             
                             <div class="col-md-1"><!-- col-md-6 begin -->
                             
-                                <img width="140" height="140" src='{{url('images/other_images/'. $hang_image)}}' alt="">
+                                <img width="140" height="140" src='{{url('images/other_images/'. $hang_image)}}' alt="{{$hang_image}}">
                             
                             </div><!-- col-md-6 finish -->
                         

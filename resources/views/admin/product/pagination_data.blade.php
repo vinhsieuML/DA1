@@ -18,7 +18,7 @@
                     <td id="sta">{{ $row->id}}</td>
                     <td id="sta">{{ $row->name }}</td>
                     <td id="sta">{{ $p_price }}</td>  
-                    <td>  <img width="85" height="85" src='{{url('images/product_images/'. $p_link)}}' alt="">  </td>    
+                    <td>  <img width="85" height="85" src='{{url('images/product_images/'. $p_link)}}' alt="{{$row->name}}">  </td>    
                     <td id="sta">   <?php
                                     if($p_stt==1)
                                     {
