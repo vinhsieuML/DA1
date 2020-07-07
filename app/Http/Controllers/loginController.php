@@ -52,7 +52,17 @@ class loginController extends Controller
             ->select('users.*')
             ->get();
         if ($auth->count('*') == 0) {
-            echo "<script>alert('Bạn đã nhập sai mật khẩu hoặc email')</script>";
+            echo "<script>
+                    alert('Bạn đã nhập sai mật khẩu hoặc email');
+                    window.location.replace('/DA1/public/login');
+                </script>";
+            exit();
+        }
+        if ($auth[0]->status == 0) {
+            echo "<script>
+                    alert('Tài khoản của bạn đã bị khóa, vui lòng liên lạc');
+                    window.location.replace('/DA1/public/login');
+                </script>";
             exit();
         }
 
@@ -86,10 +96,12 @@ class loginController extends Controller
             session(['token' => json_decode($response, true)['token']]);
             session(['customer_email' => $customer_email]);
         } else {
-            return "<script>alert('Server không hoạt động')</script>";
+            return "<script>
+            alert('Server không hoạt động');
+            window.location.replace('/DA1/public/login');
+            </script>";
         }
         if ($bill == 0) {
-
             echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
         } else {
 

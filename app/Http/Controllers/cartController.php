@@ -57,7 +57,7 @@ class cartController extends Controller
             $id_user = $request->id_user;
             $id_size = $request->id_size;
             $qty = $request->quantity;
-            Log::debug($id_size);
+            Log::debug($qty);
             $update = DB::table('cart_detail')
                 ->where([
                     ['id_size_detail', '=', $id_size],
@@ -76,15 +76,17 @@ class cartController extends Controller
     {
         if (isset($request['update'])) {
             $email = $request['update'];
-            foreach ($request['remove'] as $remove_id) {
-                $user = User::where('email','=',$email)->get()[0]->id;
-                $check = cartDetail::where([
-                    ['id_size_detail','=',$remove_id],
-                    ['id_customer','=',$user]
-                    ])->delete();
-                if (!$check) {
-
-                    echo "<script>alert('Có lỗi xảy ra')</script>";
+            if(isset($request['remove'])){
+                foreach ($request['remove'] as $remove_id) {
+                    $user = User::where('email','=',$email)->get()[0]->id;
+                    $check = cartDetail::where([
+                        ['id_size_detail','=',$remove_id],
+                        ['id_customer','=',$user]
+                        ])->delete();
+                    if (!$check) {
+    
+                        echo "<script>alert('Có lỗi xảy ra')</script>";
+                    }
                 }
             }
             $redirect = url('/user/cart');

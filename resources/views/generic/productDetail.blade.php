@@ -192,6 +192,22 @@ $p_cat_title = $product_type->name;
                     <p>
                         <?php echo $pro_desc; ?>
                     </p>
+                    <div style="padding:2% 10% 2% 10%;background-color:white;margin-bottom:30px">
+                        <?php foreach (preg_split("/\,/", $pro_link) as $key => $value)
+                        {
+                        ?>
+                        
+                            <div class="item active" style="margin-bottom:10px">
+                                <a href='#' target='_self'>
+                                    <img src='{{url('images/product_images/'.$value)}}' alt="{{$value}}" class='img-responsive'>
+                                </a>
+                            </div>
+                            <?php
+                        }?>
+                        <div id="textDetailProduct">
+
+                        </div>
+                    </div>
                     <hr>
                 </center>
             </div><!-- box Finish -->

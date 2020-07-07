@@ -109,8 +109,8 @@
                             
 
                             <div class="col-md-6"><!-- col-md-6 begin -->
-                            <select id="searchs" name="p_type" class="form-control" onchange="showUser(this.value); ">
-                            <option selected disabled> Chọn danh mục </option>
+                            <select id="searchs" name="p_type" class="form-control" onchange="showUser(this.value); " disabled>
+                            <option selected > Chọn danh mục </option>
                            
                                     <!-- col-md-6 bat dau -->
 
@@ -182,10 +182,11 @@
                                             
                                                 <?php 
                                                     
-                                                    $available = isset($_POST[$k][0]) ? $_POST[$k][0] : "";
+                                                    //$available = isset($_POST[$k][0]) ? $_POST[$k][0] : "";
                                                 
                                                     foreach($size_detail as $row) {
                                                         $k++;
+                                                        $size_detail_id = $row->id;
                                                         $size_name = $row->name;
                                                         $size_quantity = $row->number;
                                                     
@@ -195,7 +196,7 @@
                                                     <tr>
                                                     <td> {{$size_name}} </td>
                                                     <td>
-                                                    <input type='number' min='0' name="p_sl_size<?php echo"$k"; ?>" class='form-control' placeholder='Số lượng' value= {{ $size_quantity}}  oninput="validity.valid||(value='');">
+                                                    <input type='number' min='0' name="p_sl_size<?php echo"$size_detail_id"; ?>" class='form-control' placeholder='Số lượng' value= {{ $size_quantity}}  oninput="validity.valid||(value='');">
                                                     </td>
                                                     </tr>
 
@@ -257,7 +258,7 @@
                         
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                            Description
+                            Chi tiết sản phẩm
                         
                         </label><!-- control-label col-md-3 finish --> 
                         

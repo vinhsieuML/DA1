@@ -113,7 +113,12 @@
                                 echo 'Chờ xác thực';
                                 break;
                             case 2:
-                                echo '<a href="' . $url_payment . '" target="_blank" class="btn btn-primary btn-sm" disable> Thanh toán lại </a>';
+                                if($url_payment == null){
+                                    echo '<a href="" target="_blank" class="btn btn-primary btn-sm" disabled> Thanh toán lại </a>';
+                                }
+                                else{
+                                    echo '<a href="' . $url_payment . '" target="_blank" class="btn btn-primary btn-sm"> Thanh toán lại </a>';
+                                }
                                 break;
                             case 3: ?>
                                 <a href="{{url('/user/confirmOrder/' .$order_id)}}" class="btn btn-primary btn-sm" disable> Đã Nhận Hàng </a>

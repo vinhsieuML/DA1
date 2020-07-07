@@ -104,17 +104,23 @@ class userController extends Controller
 
         $sel_c_old_pass = DB::table('users')
             ->where([['email', '=', $c_email], ['password', '=', $c_old_pass]])
-            ->count('*')->get();
+            ->get()->count('*');
         if ($sel_c_old_pass == 0) {
 
-            echo "<script>alert('Mật khẩu cũ không đúng vui lòng thử lại')</script>";
+            echo "<script>
+                alert('Mật khẩu cũ không đúng vui lòng thử lại');
+                window.location.replace('/DA1/public/user/changePass');
+            </script>";
 
             exit();
         }
 
         if ($c_new_pass != $c_new_pass_again) {
 
-            echo "<script>alert('Mật khẩu mới không trùng khớp')</script>";
+            echo "<script>
+                alert('Mật khẩu mới không trùng khớp');
+                window.location.replace('/DA1/public/user/changePass');
+            </script>";
 
             exit();
         }
@@ -125,9 +131,11 @@ class userController extends Controller
 
         if ($update_c_pass) {
 
-            echo "<script>alert('Thay đổi thành công, vui lòng đăng nhập lại)</script>";
+            echo "<script>
+                alert('Thay đổi thành công, vui lòng đăng nhập lại);
+                window.location.replace('/DA1/public/');
+            </script>";
 
-            echo "<script>window.open('logout.php','_self')</script>";
         }
     }
 }

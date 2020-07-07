@@ -167,7 +167,7 @@
                         <div class="pull-left">
                             <!-- pull-left Begin -->
 
-                            <a href="index.php" class="btn btn-default">
+                        <a href="{{url('/')}}" class="btn btn-default">
                                 <!-- btn btn-default Begin -->
 
                                 <i class="fa fa-chevron-left"></i> Tiếp tục mua sắm
@@ -382,6 +382,17 @@
     </div><!-- container Finish -->
 </div><!-- #content Finish -->
 
+<div class="notification">
+
+
+</div>
+
+<div style="display:none" id="loading">
+    <div style="width: 100vw; height: 100vh; background-color: gray; opacity: 0.8; position: fixed; top: 0;display: flex;justify-content:center">
+        <div class="loader" style="position:absolute;top:35%"></div>
+    </div>
+</div>
+
 <?php
 
 $customer_city_id = $userInfo->cityID;
@@ -496,7 +507,7 @@ $customer_ward_id = $userInfo->wardID;
             var id_users = $(this).data("user_id");
             var id_size = $(this).data("size_id");
             var quantity = $(this).val();
-            if (quantity != '') {
+            if (quantity != '' && !isNaN(quantity)) {
 
                 $.ajax({
                     url: "{{url('user/cart/change')}}",
@@ -517,7 +528,10 @@ $customer_ward_id = $userInfo->wardID;
                 });
 
             }
-
+            else{
+                $(this).attr("value", "1");
+                $(this).val("1");
+            }
         }, 1000));
     });
 </script>

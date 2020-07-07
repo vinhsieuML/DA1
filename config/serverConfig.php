@@ -2,6 +2,5 @@
 
 return [
     //Dia chi Nodejs
-    'localIp' => 'http://192.168.0.111:3000'
-
+    'localIp' => 'http://localhost:3000'
 ];

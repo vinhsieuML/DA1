@@ -41,13 +41,13 @@ class shopController extends Controller
                 $product = DB::table('product')
                     ->join('images', 'product.id', '=', 'images.id_product')
                     ->select('product.*', DB::raw('GROUP_CONCAT(images.link) as link'))
-                    ->where('product.id_type', '=', $cat_id)
+                    ->where([['product.id_type', '=', $cat_id],['product.status','=','1']])
                     ->groupBy('product.id')
                     ->offset($start_from)
                     ->limit(6)
                     ->get();
 
-                $total = product::where('id_type', '=', $cat_id)->count('*');
+                $total = product::where([['id_type', '=', $cat_id],['status','=','1']])->count('*');
 
                 $count = $product->count('*');
 
@@ -76,13 +76,13 @@ class shopController extends Controller
                 $product = DB::table('product')
                     ->join('images', 'product.id', '=', 'images.id_product')
                     ->select('product.*', DB::raw('GROUP_CONCAT(images.link) as link'))
-                    ->where('product.id_hang', '=', $detail)
+                    ->where([['product.id_hang', '=', $detail],['product.status','=','1']])
                     ->groupBy('product.id')
                     ->offset($start_from)
                     ->limit(6)
                     ->get();
 
-                $total = product::where('id_hang', '=', $detail)->count('*');
+                $total = product::where([['id_hang', '=', $detail],['status','=','1']])->count('*');
 
                 $count = $product->count('*');
 
@@ -107,13 +107,13 @@ class shopController extends Controller
                 $product = DB::table('product')
                     ->join('images', 'product.id', '=', 'images.id_product')
                     ->select('product.*', DB::raw('GROUP_CONCAT(images.link) as link'))
-                    ->where('product.name', 'like', '%' . $detail . '%')
+                    ->where([['product.name', 'like', '%' . $detail . '%'],['product.status','=','1']])
                     ->groupBy('product.id')
                     ->offset($start_from)
                     ->limit(6)
                     ->get();
 
-                $total = product::where('name', 'like', '%' . $detail . '%')->count('*');
+                $total = product::where([['name', 'like', '%' . $detail . '%'],['status','=','1']])->count('*');
 
                 $count = $product->count('*');
 
