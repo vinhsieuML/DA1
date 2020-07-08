@@ -1,79 +1,144 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<img src="https://www.upsieutoc.com/images/2020/06/26/logo2.png" alt="logo2.png" border="0" />
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+# Website Shop bán đồ bóng rổ
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> Shop phụ kiện bóng rổ quy mô vừa, nhỏ
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> Đồ án 1 - SE121.K21
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+> Thanh toán online, offline thuận tiện
 
-## Learning Laravel
+> #web_bong_ro, #web_ban_hang, #basketball_store, #basketball_shop
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Giao diện trang chủ
 
-## Laravel Sponsors
+![Recordit GIF](http://g.recordit.co/3Y0UD6xobR.gif)
+## Giao diện trang quản lý của Admin
+![Recordit GIF](http://g.recordit.co/q0QVmbJDJa.gif)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+## Nội dung
+
+> Các phần hướng dẫn
+
+- [Installation](#installation)
+- [Setup](#Setup)
+- [Features](#features)
+- [Contributing](#contributing)
+- [Team](#team)
+- [FAQ](#faq)
+- [Support](#support)
+- [License](#license)
+
+
+---
+
+
+## Installation
+
+- Clone repository về máy
+- Cài đặt Xamp https://www.apachefriends.org/download.html
+- Cài đặt IDE Visual Studio Code https://code.visualstudio.com/download
+- Cài đặt Composer https://getcomposer.org/download/
+- Tải nodejs ở https://nodejs.org/en/download/
+- Trình duyệt web để xem web, Google Chrome https://www.google.com/intl/vi_vn/chrome/ hoặc Mozilla FireFox https://www.mozilla.org/vi/firefox/new/
+
+### Setup
+> Copy thư mục vào đường dẫn xampp\htdocs
+
+> Chạy script database để khởi tạo cơ sở dữ liệu trong MySQL
+
+```shell
+- Mở file db_app.sql
+- Nhấn tổ hợp phím Ctrl+A để chọn toàn bộ và bấm Excute
+```
+
+> Setup server NodeJS
+
+```shell
+- Mở console của trình IDE, sau đó install node module bằng : 
+$ npm i
+- Sau đó chạy server bằng : 
+$ npm start 
+ hoặc
+$ npm server
+```
+> Mở Xamp và start Xamp và Apache
+> Chạy code trên IDE
+
+```shell
+- Mở Visual Studio Code
+- Mở thư mục website DA1 ở đường dẫn xampp\htdocs
+
+ 
+  *Hoặc
+  
+- Vào thẳng thư mục website DA1 và mở CMD và gõ 'code .'
+- Bấm Enter
+```
+
+---
+
+## Features
+- Hình thức thanh toán đa dạng với BaoKim, MoMo, COD 
+- Trang quản lý Admin đa dụng
+- Kết hợp kênh vận chuyển Giaohangnhanh
+- SEO đạt 100 điểm
+
+---
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+> To get started...
 
-## Code of Conduct
+### Step 1
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- 👯 Clone repos về máy
 
-## Security Vulnerabilities
+### Step 2
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **HACK AWAY!** 🔨🔨🔨
+
+### Step 3
+
+- 🔃 Tạo một pull request
+
+---
+
+## Team
+
+> Các thành viên đóng góp trong nhóm
+
+| <a href="https://gitlab.com/vinhsieu" target="_blank">**Đặng Vĩnh Siêu**</a> | <a href="https://gitlab.com/shgamestudio" target="_blank">**Lưu Sỹ Hoàng**</a> |
+|:---:| :---:|
+| <a href="https://www.google.com/gmail/" target="_blank">`17520982@gm.uit.edu.vn`</a> | <a href="https://www.google.com/gmail/" target="_blank">`17520511@gm.uit.edu.vn`</a> |
+
+---
+
+## FAQ
+
+- **Web chạy có ổn định không ?**
+    - Bao ổn định .
+- ** Nếu bạn có thắc mắc gì có thể gửi về mail của các thành viên trong team **
+
+---
+
+## Support
+
+- No money needed :))
+- Feedback và gửi lỗi về cho chúng mình là những support tốt nhất!
+
+
+---
+
+
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **Nhóm 12**
+- Copyright 2020 © <a href="https://gitlab.com/hoangvip04648/website-ban-do-bong-ro" target="_blank">Shop bóng rổ</a>.
