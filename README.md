@@ -39,7 +39,7 @@
 
 ## Installation
 
-- Clone repository về máy
+- Clone repository về máy https://github.com/vinhsieuML/DA1
 - Cài đặt Xamp https://www.apachefriends.org/download.html
 - Cài đặt IDE Visual Studio Code https://code.visualstudio.com/download
 - Cài đặt Composer https://getcomposer.org/download/
@@ -139,6 +139,4 @@ $ npm server
 ## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
-
-- **Nhóm 12**
-- Copyright 2020 © <a href="https://gitlab.com/hoangvip04648/website-ban-do-bong-ro" target="_blank">Shop bóng rổ</a>.
+- Copyright 2020 © <a href="https://github.com/vinhsieuML/DA1" target="_blank">Shop bóng rổ</a>.
